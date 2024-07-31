@@ -1,0 +1,71 @@
+using Puzzle.Match.Tiles;
+using Puzzle.Match.Interface;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+
+namespace Puzzle.Match.TileGrid
+{
+    /// <summary>
+    /// Use to handle grid and logic removing matching tiles
+    /// </summary>
+    public class TilesGrid : MonoBehaviour, IGrid
+    {
+        /// <summary>
+        /// Tiles prefabes use to instantiate on runtime
+        /// </summary>
+        [SerializeField] private Tile tilePrefabe;
+        /// <summary>
+        /// distance between gride of tiles 
+        /// </summary>
+        [SerializeField] private float tilesOffset;
+        /// <summary>
+        /// Tiles gride
+        /// </summary>
+        private ITile[,] gridTiles;
+        /// <summary>
+        /// Holding tile positon of grid
+        /// </summary>
+        private Vector3[,] tileGridPositions;
+
+        private bool isTileMatched = false;
+        /// <summary>
+        /// return true when tiles where just detroyed and doesnt align yet
+        /// </summary>
+        public bool IsTileMatched => isTileMatched;
+        /// <summary>
+        /// Generating tiles
+        /// </summary>
+        public ITile[,] GenerateTiles(int xLength, int yLength)
+        {
+            gridTiles = new ITile[xLength, yLength];
+            tileGridPositions = new Vector3[xLength, yLength];
+            Vector3 position = new(-xLength / 2, -yLength / 2, 0);
+            for (int x = 0; x < xLength; x++)
+            {
+                for (int y = 0; y < yLength; y++)
+                {
+                    ITile tile = Instantiate(tilePrefabe,transform);
+                    tile.SetIndex(new(x, y));
+                    tile.SetPosition(position);
+                    gridTiles[x, y] = tile;
+                    tileGridPositions[x, y] = position;
+                    position.y += tilesOffset;
+                }
+                position.x += tilesOffset;
+                position.y = -yLength / 2;
+            }
+            return gridTiles;
+        }
+
+        /// <summary>
+        /// return the tile position against the tile index x and y
+        /// </summary>
+        private Vector3 GetPositionFromIndex(int x, int y)
+        {
+            return tileGridPositions[x, y];
+        }
+    }
+}
