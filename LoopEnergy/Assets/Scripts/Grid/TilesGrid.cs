@@ -1,14 +1,15 @@
-using Puzzle.Match.Tiles;
-using Puzzle.Match.Interface;
+using EnergyLoop.Game.Tiles;
+using EnergyLoop.Game.Interface;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Unity.VisualScripting;
-using Puzzle.Match.Tiles.Details;
+using EnergyLoop.Game.Tiles.Details;
+using EnergyLoop.Game.LevelSerializer;
 
-namespace Puzzle.Match.TileGrid
+namespace EnergyLoop.Game.TileGrid
 {
     /// <summary>
     /// Use to handle grid and logic removing matching tiles
@@ -56,6 +57,14 @@ namespace Puzzle.Match.TileGrid
                 position.y = -yLength / 2;
             }
             return gridTiles;
+        }
+
+        public void SetLevelDetails(Level level)
+        {
+            foreach (var tile in level.Grid)
+            {
+                gridTiles[tile.Properties.x, tile.Properties.y].SetTileDetails(tile);
+            }
         }
 
         /// <summary>

@@ -1,16 +1,18 @@
 #if UNITY_EDITOR
 using System.Threading.Tasks;
-using Puzzle.Match.Interface;
+using EnergyLoop.Game.Interface;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
-using Puzzle.Match.TileGrid;
-using Puzzle.Match.Tiles.Details;
+using EnergyLoop.Game.TileGrid;
+using EnergyLoop.Game.Tiles.Details;
 using System;
 using Unity.VisualScripting;
+using UnityEngine.UI;
+using EnergyLoop.Game.LevelSerializer;
 
 
-namespace Puzzle.Match.Controller
+namespace EnergyLoop.Game.LevelMaker
 {
     /// <summary>
     /// Handles the tiles and grid calling 
@@ -22,6 +24,8 @@ namespace Puzzle.Match.Controller
         [SerializeField] private int gridSizeX;
         //Grid size y 
         [SerializeField] private int gridSizeY;
+        [SerializeField] LevelSaveLoadUtility levelSaveLoadUtility;
+        [SerializeField] Button buttonLevelSave;
         /// <summary>
         /// Tiles Grid
         /// use to handle tiles listners like when use select tiles
@@ -31,10 +35,15 @@ namespace Puzzle.Match.Controller
 
         bool isRotateTile;
 
-
         private void Awake()
         {
             this.iGrid = TilesGrid;
+            buttonLevelSave.onClick.AddListener(SaveLevel);
+        }
+
+        private void SaveLevel()
+        {
+            levelSaveLoadUtility.SaveLevel(new Level(gridTiles));
         }
 
         private void OnEnable()

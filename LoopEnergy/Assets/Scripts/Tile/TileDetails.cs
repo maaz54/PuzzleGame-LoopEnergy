@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Puzzle.Match.Tiles.Details
+namespace EnergyLoop.Game.Tiles.Details
 {
     [System.Serializable]
     public class TileView
@@ -11,18 +11,16 @@ namespace Puzzle.Match.Tiles.Details
         public TileType Type;
     }
 
-
-
     [System.Serializable]
     public class TileData
     {
         public TileType Type;
         public TileTranformProperties Properties;
 
-        public TileData(TileType Type, TileTranformProperties Index)
+        public TileData(TileType Type, TileTranformProperties Properties)
         {
             this.Type = Type;
-            this.Properties = Index;
+            this.Properties = Properties;
         }
     }
 

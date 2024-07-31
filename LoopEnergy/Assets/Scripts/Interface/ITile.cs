@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using Puzzle.Match.Tiles.Details;
+using EnergyLoop.Game.Tiles.Details;
 
-namespace Puzzle.Match.Interface
+namespace EnergyLoop.Game.Interface
 {
     public class TileClickedEvent : UnityEvent<ITile> { }
     public interface ITile

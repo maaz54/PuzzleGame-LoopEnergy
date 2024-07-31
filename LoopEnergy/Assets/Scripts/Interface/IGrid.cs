@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Threading.Tasks;
+using EnergyLoop.Game.LevelSerializer;
 using UnityEngine;
 
-namespace Puzzle.Match.Interface
+namespace EnergyLoop.Game.Interface
 {
     public interface IGrid
     {
@@ -12,6 +13,8 @@ namespace Puzzle.Match.Interface
         /// <param name="x">lenght of horizontal tiles</param>
         /// <param name="y">lenght of vertical tiles</param>
         ITile[,] GenerateTiles(int xLenght, int yLenght);
+
+        void SetLevelDetails(Level level);
 
         /// <summary>
         /// remove tiles at runtime

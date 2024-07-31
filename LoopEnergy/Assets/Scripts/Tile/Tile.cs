@@ -1,12 +1,12 @@
-using Puzzle.Match.Interface;
+using EnergyLoop.Game.Interface;
 using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
-using Puzzle.Match.Tiles.Details;
+using EnergyLoop.Game.Tiles.Details;
 using System.Linq;
 
-namespace Puzzle.Match.Tiles
+namespace EnergyLoop.Game.Tiles
 {
     public class Tile : MonoBehaviour, ITile
     {
