@@ -14,8 +14,9 @@ namespace Puzzle.Match.Interface
         ITile[,] GenerateTiles(int xLenght, int yLenght);
 
         /// <summary>
-        /// return true when tiles where just detroyed and doesnt align yet
+        /// remove tiles at runtime
         /// </summary>
-        bool IsTileMatched { get; }
+        void EmptyGrid();
+
     }
 }

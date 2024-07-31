@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Puzzle.Match.Tiles.Details;
 
 namespace Puzzle.Match.Interface
 {
@@ -10,31 +11,22 @@ namespace Puzzle.Match.Interface
     public interface ITile
     {
         // handle the callback when use click on tile
-        TileClickedEvent OnTileSelect { get; set; }
-        // Unique tile identifier
-        int TileNo { get; }
-        // Tile index in a grid
-        TileIndex Index { get; }
+        TileClickedEvent OnTileClicked { get; set; }
+
         // tile transfrom
         Transform Transform { get; }
         // tile position
         Vector3 Position { get; }
-        //setting tile index
-        public void SetIndex(TileIndex index);
+
+        TileData Data{ get; }
+
+        //setting tile Details
+        void SetTileDetails(TileData details);
         // setting tile position
-        public void SetPosition(Vector3 position);
+        void SetPosition(Vector3 position);
         // destroying tile
-        public void DestroyTile();
-    }
+        void DestroyTile();
 
-    public class TileIndex
-    {
-        public int x, y;
-
-        public TileIndex(int x, int y)
-        {
-            this.x = x;
-            this.y = y;
-        }
+        void SetType(TileType type);
     }
 }

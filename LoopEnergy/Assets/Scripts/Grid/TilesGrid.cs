@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
+using Puzzle.Match.Tiles.Details;
 
 namespace Puzzle.Match.TileGrid
 {
@@ -30,11 +32,6 @@ namespace Puzzle.Match.TileGrid
         /// </summary>
         private Vector3[,] tileGridPositions;
 
-        private bool isTileMatched = false;
-        /// <summary>
-        /// return true when tiles where just detroyed and doesnt align yet
-        /// </summary>
-        public bool IsTileMatched => isTileMatched;
         /// <summary>
         /// Generating tiles
         /// </summary>
@@ -47,8 +44,9 @@ namespace Puzzle.Match.TileGrid
             {
                 for (int y = 0; y < yLength; y++)
                 {
-                    ITile tile = Instantiate(tilePrefabe,transform);
-                    tile.SetIndex(new(x, y));
+                    ITile tile = Instantiate(tilePrefabe, transform);
+                    TileData data = new TileData(TileType.None, new(x, y, 0));
+                    tile.SetTileDetails(data);
                     tile.SetPosition(position);
                     gridTiles[x, y] = tile;
                     tileGridPositions[x, y] = position;
@@ -58,6 +56,20 @@ namespace Puzzle.Match.TileGrid
                 position.y = -yLength / 2;
             }
             return gridTiles;
+        }
+
+        /// <summary>
+        /// remove tiles at runtime
+        /// </summary>
+        public void EmptyGrid()
+        {
+            if (!gridTiles.IsUnityNull())
+            {
+                foreach (var item in gridTiles)
+                {
+                    item.DestroyTile();
+                }
+            }
         }
 
         /// <summary>

@@ -421,9 +421,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1211478094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e517c72c9fee8e4687745a72fb15681, type: 3}
+  m_Script: {fileID: 11500000, guid: 34c28ca274c0dd648b15ca82d5d8aedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TilesGrid: {fileID: 1123002237}
-  gridSizeX: 10
-  gridSizeY: 10
+  gridSizeX: 5
+  gridSizeY: 5

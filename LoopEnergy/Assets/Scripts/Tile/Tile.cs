@@ -3,7 +3,8 @@ using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.VisualScripting;
+using Puzzle.Match.Tiles.Details;
+using System.Linq;
 
 namespace Puzzle.Match.Tiles
 {
@@ -12,17 +13,10 @@ namespace Puzzle.Match.Tiles
         /// <summary>
         /// handle the callback when use click on tile
         /// </summary>
-        public TileClickedEvent OnTileSelect { get; set; } = new();
-        [SerializeField] int tileNo;
-        /// <summary>
-        /// Unique tile identifier
-        /// </summary>
-        public int TileNo => tileNo;
-        TileIndex index;
-        /// <summary>
-        /// Tile index in a grid
-        /// </summary>
-        public TileIndex Index => index;
+        public TileClickedEvent OnTileClicked { get; set; } = new();
+        [SerializeField] TileView[] tileView;
+        [SerializeField] SpriteRenderer spriteRenderer;
+
         private Vector3 position;
         /// <summary>
         /// tile position
@@ -33,16 +27,9 @@ namespace Puzzle.Match.Tiles
         /// </summary>
         public Transform Transform => transform;
 
-        public int ObjectID => tileNo;
+        private TileData data;
 
-
-        /// <summary>
-        /// setting tile index
-        /// </summary>
-        public void SetIndex(TileIndex index)
-        {
-            this.index = index;
-        }
+        public TileData Data => data;
 
         /// <summary>
         /// setting tile position
@@ -53,13 +40,27 @@ namespace Puzzle.Match.Tiles
             transform.position = position;
         }
 
+        public void SetTileDetails(TileData data)
+        {
+            this.data = data;
+            transform.localEulerAngles = new Vector3(0,0,data.Properties.RotationZ); 
+            SetType(this.data.Type);
+        }
+
+        public void SetType(TileType type)
+        {
+            spriteRenderer.sprite = tileView.First(view => view.Type == type).sprite;
+            spriteRenderer.size = new Vector2(1, 1);
+        }
+
         /// <summary>
         /// tile transfrom
         /// </summary>
         private void OnMouseDown()
         {
             transform.localScale = Vector3.one * 1.1f;
-            OnTileSelect?.Invoke(this);
+            OnTileClicked?.Invoke(this);
+
         }
         /// <summary>
         /// tile transfrom
@@ -73,7 +74,7 @@ namespace Puzzle.Match.Tiles
         /// </summary>
         public void DestroyTile()
         {
-           Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }
