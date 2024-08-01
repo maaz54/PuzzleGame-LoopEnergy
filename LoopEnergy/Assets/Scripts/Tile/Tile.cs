@@ -47,6 +47,11 @@ namespace EnergyLoop.Game.Tiles
             SetType(this.data.Type);
         }
 
+        public void SetZRotation(float value)
+        {
+            transform.localEulerAngles = new Vector3(0,0,value);
+        }
+
         public void SetType(TileType type)
         {
             spriteRenderer.sprite = tileView.First(view => view.Type == type).sprite;

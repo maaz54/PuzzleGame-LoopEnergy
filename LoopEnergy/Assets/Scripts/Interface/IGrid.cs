@@ -16,6 +16,8 @@ namespace EnergyLoop.Game.Interface
 
         void SetLevelDetails(Level level);
 
+        void RandomizeRotation();
+
         /// <summary>
         /// remove tiles at runtime
         /// </summary>

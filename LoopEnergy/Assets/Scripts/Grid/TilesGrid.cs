@@ -67,6 +67,22 @@ namespace EnergyLoop.Game.TileGrid
             }
         }
 
+        public void RandomizeRotation()
+        {
+            System.Random random = new System.Random();
+            int[] rotationValues = { 90, 180, 270, 360 };
+
+            foreach (var tile in gridTiles)
+            {
+                if (tile.Data.Type != TileType.None &&
+                    tile.Data.Type != TileType.Power)
+                {
+                    int randomValue = rotationValues[random.Next(rotationValues.Length)];
+                    tile.SetZRotation(randomValue);
+                }
+            }
+        }
+
         /// <summary>
         /// remove tiles at runtime
         /// </summary>

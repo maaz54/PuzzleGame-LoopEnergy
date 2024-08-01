@@ -28,5 +28,7 @@ namespace EnergyLoop.Game.Interface
         void DestroyTile();
 
         void SetType(TileType type);
+
+        void SetZRotation(float value);
     }
 }
