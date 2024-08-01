@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using EnergyLoop.Game.Gameplay.Manager.UI;
 using EnergyLoop.Game.Interface;
 using EnergyLoop.Game.LevelSerializer;
 using EnergyLoop.Game.TileGrid;
@@ -9,18 +11,53 @@ namespace EnergyLoop.Game.Gameplay.Manager
 {
     public class GameManager : MonoBehaviour
     {
+        [SerializeField] LevelPrograssionSaveLoadUtility levelPrograssionSaveLoadUtility;
         [SerializeField] LevelSaveLoadUtility levelSaveLoadUtility;
         [SerializeField] TilesGrid tileGrid;
+        [SerializeField] UIManager uIManager;
         LevelData levelData;
-
+        LevelsProgression levelsProgression;
         private ITile[,] gridTiles;
+
+        private int noOfTurns = 0;
 
         private void Start()
         {
-            levelData = levelSaveLoadUtility.LoadLevelData();
-
-            GenerateLevel(2);
+            LoadingUtilities();
+            uIManager.SetLevelDetails(levelsProgression);
+            uIManager.OnLevelButton += OnLevelButton;
+            uIManager.OnGameStartButton += OnPlayGame;
         }
+
+        void LoadingUtilities()
+        {
+            levelData = levelSaveLoadUtility.LoadLevelData();
+            if (!levelPrograssionSaveLoadUtility.IsProgressFileSaved)
+            {
+                levelPrograssionSaveLoadUtility.InitializeLevelProgression(levelData);
+            }
+            else
+            {
+                levelsProgression = levelPrograssionSaveLoadUtility.LoadProgress();
+            }
+        }
+
+        private void OnLevelButton(LevelProgressData levelProgressData)
+        {
+            if (!levelProgressData.IsLocked)
+            {
+                uIManager.PlayGame();
+                GenerateLevel(levelProgressData.LevelNo);
+            }
+        }
+
+        private void OnPlayGame()
+        {
+            LevelProgressData levelProgressData = levelsProgression.LevelsProgressData.FindLast(level => !level.IsLocked);
+            uIManager.PlayGame();
+            GenerateLevel(1);
+        }
+
 
         private void GenerateLevel(int levelNo)
         {
@@ -28,6 +65,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
             tileGrid.SetLevelDetails(levelData.Levels[levelNo - 1]);
             tileGrid.RandomizeRotation();
             TilesListener();
+            noOfTurns = 0;
         }
 
         /// <summary>
@@ -53,7 +91,22 @@ namespace EnergyLoop.Game.Gameplay.Manager
         /// <param name="clickedTile"></param>
         private void OnTileClicked(ITile clickedTile)
         {
-            clickedTile.SetZRotation(clickedTile.Transform.localEulerAngles.z + 90);
+            clickedTile.RotateTile();
+            noOfTurns++;
+            if (clickedTile.CurrentRotationIndex == clickedTile.Data.Properties.RotationIndex)
+            {
+                CheckedIsAllTileMatched();
+            }
+        }
+
+        private void CheckedIsAllTileMatched()
+        {
+            if (tileGrid.CheckAllTileMatched())
+            {
+                uIManager.LevelComplete(noOfTurns);
+
+            }
+
         }
 
 

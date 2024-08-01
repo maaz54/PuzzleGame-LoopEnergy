@@ -52,6 +52,7 @@ namespace EnergyLoop.Game.TileGrid
                     gridTiles[x, y] = tile;
                     tileGridPositions[x, y] = position;
                     position.y += tilesOffset;
+                    tile.Transform.name = "" + x + "," + y;
                 }
                 position.x += tilesOffset;
                 position.y = -yLength / 2;
@@ -69,18 +70,37 @@ namespace EnergyLoop.Game.TileGrid
 
         public void RandomizeRotation()
         {
-            System.Random random = new System.Random();
-            int[] rotationValues = { 90, 180, 270, 360 };
-
             foreach (var tile in gridTiles)
             {
                 if (tile.Data.Type != TileType.None &&
                     tile.Data.Type != TileType.Power)
                 {
-                    int randomValue = rotationValues[random.Next(rotationValues.Length)];
-                    tile.SetZRotation(randomValue);
+                    tile.SetZRotation(UnityEngine.Random.Range(0, 4));
                 }
             }
+        }
+
+        public bool CheckAllTileMatched()
+        {
+            bool isAllTilesMatched = false;
+            foreach (var tile in gridTiles)
+            {
+                if (tile.Data.Type != TileType.None &&
+                    tile.Data.Type != TileType.Power)
+                {
+                    if (tile.CurrentRotationIndex == tile.Data.Properties.RotationIndex)
+                    {
+                        isAllTilesMatched = true;
+
+                    }
+                    else
+                    {
+                        isAllTilesMatched = false;
+                        break;
+                    }
+                }
+            }
+            return isAllTilesMatched;
         }
 
         /// <summary>

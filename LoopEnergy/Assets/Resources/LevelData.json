@@ -7,7 +7,7 @@
                     "Properties": {
                         "x": 0,
                         "y": 0,
-                        "RotationZ": 270.0
+                        "RotationIndex": 3
                     }
                 },
                 {
@@ -15,7 +15,7 @@
                     "Properties": {
                         "x": 0,
                         "y": 1,
-                        "RotationZ": 0.0
+                        "RotationIndex": 0
                     }
                 },
                 {
@@ -23,7 +23,7 @@
                     "Properties": {
                         "x": 1,
                         "y": 0,
-                        "RotationZ": 360.0
+                        "RotationIndex": 0
                     }
                 },
                 {
@@ -31,7 +31,7 @@
                     "Properties": {
                         "x": 1,
                         "y": 1,
-                        "RotationZ": 180.0
+                        "RotationIndex": 2
                     }
                 },
                 {
@@ -39,7 +39,7 @@
                     "Properties": {
                         "x": 2,
                         "y": 0,
-                        "RotationZ": 0.0
+                        "RotationIndex": 2
                     }
                 },
                 {
@@ -47,114 +47,12 @@
                     "Properties": {
                         "x": 2,
                         "y": 1,
-                        "RotationZ": 90.0
+                        "RotationIndex": 1
                     }
                 }
             ],
             "XLenght": 3,
             "YLenght": 2
-        },
-        {
-            "Grid": [
-                {
-                    "Type": 0,
-                    "Properties": {
-                        "x": 0,
-                        "y": 0,
-                        "RotationZ": 0.0
-                    }
-                },
-                {
-                    "Type": 0,
-                    "Properties": {
-                        "x": 0,
-                        "y": 1,
-                        "RotationZ": 0.0
-                    }
-                },
-                {
-                    "Type": 2,
-                    "Properties": {
-                        "x": 0,
-                        "y": 2,
-                        "RotationZ": 360.0
-                    }
-                },
-                {
-                    "Type": 0,
-                    "Properties": {
-                        "x": 1,
-                        "y": 0,
-                        "RotationZ": 0.0
-                    }
-                },
-                {
-                    "Type": 4,
-                    "Properties": {
-                        "x": 1,
-                        "y": 1,
-                        "RotationZ": 270.0
-                    }
-                },
-                {
-                    "Type": 4,
-                    "Properties": {
-                        "x": 1,
-                        "y": 2,
-                        "RotationZ": 450.0
-                    }
-                },
-                {
-                    "Type": 0,
-                    "Properties": {
-                        "x": 2,
-                        "y": 0,
-                        "RotationZ": 0.0
-                    }
-                },
-                {
-                    "Type": 3,
-                    "Properties": {
-                        "x": 2,
-                        "y": 1,
-                        "RotationZ": 0.0
-                    }
-                },
-                {
-                    "Type": 0,
-                    "Properties": {
-                        "x": 2,
-                        "y": 2,
-                        "RotationZ": 0.0
-                    }
-                },
-                {
-                    "Type": 1,
-                    "Properties": {
-                        "x": 3,
-                        "y": 0,
-                        "RotationZ": 0.0
-                    }
-                },
-                {
-                    "Type": 4,
-                    "Properties": {
-                        "x": 3,
-                        "y": 1,
-                        "RotationZ": 90.0
-                    }
-                },
-                {
-                    "Type": 0,
-                    "Properties": {
-                        "x": 3,
-                        "y": 2,
-                        "RotationZ": 0.0
-                    }
-                }
-            ],
-            "XLenght": 4,
-            "YLenght": 3
         }
     ]
 }

@@ -30,6 +30,10 @@ namespace EnergyLoop.Game.Tiles
         private TileData data;
 
         public TileData Data => data;
+        int[] rotationValues = { 360,90, 180, 270 };
+
+        int currentRotationIndex;
+        public int CurrentRotationIndex => currentRotationIndex;
 
         /// <summary>
         /// setting tile position
@@ -43,13 +47,24 @@ namespace EnergyLoop.Game.Tiles
         public void SetTileDetails(TileData data)
         {
             this.data = data;
-            transform.localEulerAngles = new Vector3(0,0,data.Properties.RotationZ); 
+            SetZRotation(data.Properties.RotationIndex);
             SetType(this.data.Type);
         }
 
-        public void SetZRotation(float value)
+        public void RotateTile()
         {
-            transform.localEulerAngles = new Vector3(0,0,value);
+            currentRotationIndex++;
+            if (currentRotationIndex >= rotationValues.Length)
+            {
+                currentRotationIndex = 0;
+            }
+            SetZRotation(currentRotationIndex);
+        }
+
+        public void SetZRotation(int index)
+        {
+            transform.localEulerAngles = new Vector3(0, 0, rotationValues[index]);
+            currentRotationIndex = index;
         }
 
         public void SetType(TileType type)

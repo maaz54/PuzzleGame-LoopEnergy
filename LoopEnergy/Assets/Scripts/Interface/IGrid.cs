@@ -23,5 +23,7 @@ namespace EnergyLoop.Game.Interface
         /// </summary>
         void EmptyGrid();
 
+        bool CheckAllTileMatched();
+
     }
 }

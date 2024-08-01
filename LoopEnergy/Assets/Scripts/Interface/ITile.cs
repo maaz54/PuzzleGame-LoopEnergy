@@ -18,7 +18,9 @@ namespace EnergyLoop.Game.Interface
         // tile position
         Vector3 Position { get; }
 
-        TileData Data{ get; }
+        TileData Data { get; }
+
+        int CurrentRotationIndex { get; }
 
         //setting tile Details
         void SetTileDetails(TileData details);
@@ -29,6 +31,8 @@ namespace EnergyLoop.Game.Interface
 
         void SetType(TileType type);
 
-        void SetZRotation(float value);
+        void RotateTile();
+
+        void SetZRotation(int index);
     }
 }

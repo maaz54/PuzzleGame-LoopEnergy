@@ -43,7 +43,7 @@ namespace EnergyLoop.Game.LevelMaker
 
         private void SaveLevel()
         {
-            levelSaveLoadUtility.SaveLevel(new Level(gridTiles));
+            levelSaveLoadUtility.SaveLevel(new Level(gridTiles, levelSaveLoadUtility.Data.Levels.Count + 1));
         }
 
         private void OnEnable()
@@ -90,7 +90,8 @@ namespace EnergyLoop.Game.LevelMaker
 
             if (isRotateTile)
             {
-                data.Properties.RotationZ += 90;
+                clickedTile.RotateTile();
+                data.Properties.RotationIndex = clickedTile.CurrentRotationIndex;
             }
             else
             {

@@ -24,11 +24,10 @@ namespace EnergyLoop.Game.LevelSerializer
         // public TileData[,] Grid;
         // public List<List<TileData>> Grid;
         public List<TileData> Grid;
-
         public int XLenght;
         public int YLenght;
 
-        public Level(ITile[,] grid)
+        public Level(ITile[,] grid, int levelNo)
         {
             Grid = new();
             // this.Grid = new TileData[grid.GetLength(0), grid.GetLength(1)];
