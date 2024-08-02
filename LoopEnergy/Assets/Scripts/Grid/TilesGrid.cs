@@ -39,6 +39,14 @@ namespace EnergyLoop.Game.TileGrid
         public ITile[,] GenerateTiles(int xLength, int yLength)
         {
             gridTiles = new ITile[xLength, yLength];
+
+            int rows = gridTiles.GetLength(0);
+            int columns = gridTiles.GetLength(1);
+
+            Debug.Log("Rows: " + rows);
+            Debug.Log("columns: " + columns);
+
+
             tileGridPositions = new Vector3[xLength, yLength];
             Vector3 position = new(-xLength / 2, -yLength / 2, 0);
             for (int x = 0; x < xLength; x++)
@@ -75,32 +83,91 @@ namespace EnergyLoop.Game.TileGrid
                 if (tile.Data.Type != TileType.None &&
                     tile.Data.Type != TileType.Power)
                 {
-                    tile.SetZRotation(UnityEngine.Random.Range(0, 4));
+                    int rotateTimes = UnityEngine.Random.Range(0, 4);
+
+                    for (int i = 0; i < rotateTimes; i++)
+                    {
+                        tile.RotateTile();
+                    }
                 }
             }
         }
 
-        public bool CheckAllTileMatched()
+        public bool CheckAllNodesMatched()
         {
-            bool isAllTilesMatched = false;
+            int rows = gridTiles.GetLength(0);
+            int columns = gridTiles.GetLength(1);
+
+            bool isAllNodesConnected = false;
+
             foreach (var tile in gridTiles)
             {
                 if (tile.Data.Type != TileType.None &&
                     tile.Data.Type != TileType.Power)
                 {
-                    if (tile.CurrentRotationIndex == tile.Data.Properties.RotationIndex)
+                    // Check Up connection
+                    if (tile.Node.connections[0] == 1 &&
+                    tile.Data.Properties.y < columns - 1)
                     {
-                        isAllTilesMatched = true;
+                        if (gridTiles[tile.Data.Properties.x, tile.Data.Properties.y + 1].Node.connections[2] == 1)
+                        {
+                            isAllNodesConnected = true;
+                        }
+                        else
+                        {
+                            isAllNodesConnected = false;
+                            break;
+                        }
+                    }
 
-                    }
-                    else
+                    // Check Down connection
+                    if (tile.Node.connections[2] == 1 &&
+                    tile.Data.Properties.y > 0)
                     {
-                        isAllTilesMatched = false;
-                        break;
+                        if (gridTiles[tile.Data.Properties.x, tile.Data.Properties.y - 1].Node.connections[0] == 1)
+                        {
+                            isAllNodesConnected = true;
+                        }
+                        else
+                        {
+                            isAllNodesConnected = false;
+                            break;
+                        }
                     }
+
+                    // Check right connection
+                    if (tile.Node.connections[1] == 1 &&
+                    tile.Data.Properties.x < rows - 1)
+                    {
+                        if (gridTiles[tile.Data.Properties.x + 1, tile.Data.Properties.y].Node.connections[3] == 1)
+                        {
+                            isAllNodesConnected = true;
+                        }
+                        else
+                        {
+                            isAllNodesConnected = false;
+                            break;
+                        }
+                    }
+
+                    // Check left connection
+                    if (tile.Node.connections[3] == 1 &&
+                    tile.Data.Properties.x > 0)
+                    {
+                        if (gridTiles[tile.Data.Properties.x - 1, tile.Data.Properties.y].Node.connections[1] == 1)
+                        {
+                            isAllNodesConnected = true;
+                        }
+                        else
+                        {
+                            isAllNodesConnected = false;
+                            break;
+                        }
+                    }
+
                 }
             }
-            return isAllTilesMatched;
+            return isAllNodesConnected;
         }
 
         /// <summary>

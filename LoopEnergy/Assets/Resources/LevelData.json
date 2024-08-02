@@ -7,7 +7,7 @@
                     "Properties": {
                         "x": 0,
                         "y": 0,
-                        "RotationIndex": 3
+                        "RotationIndex": 1
                     }
                 },
                 {
@@ -39,7 +39,7 @@
                     "Properties": {
                         "x": 2,
                         "y": 0,
-                        "RotationIndex": 2
+                        "RotationIndex": 0
                     }
                 },
                 {
@@ -47,7 +47,115 @@
                     "Properties": {
                         "x": 2,
                         "y": 1,
+                        "RotationIndex": 3
+                    }
+                }
+            ],
+            "XLenght": 3,
+            "YLenght": 2
+        },
+        {
+            "Grid": [
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 0,
+                        "y": 0,
                         "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 1,
+                    "Properties": {
+                        "x": 0,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 1,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 2,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 2,
+                        "y": 1,
+                        "RotationIndex": 3
+                    }
+                }
+            ],
+            "XLenght": 3,
+            "YLenght": 2
+        },
+        {
+            "Grid": [
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 0,
+                        "y": 0,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 1,
+                    "Properties": {
+                        "x": 0,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 1,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 2,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 2,
+                        "y": 1,
+                        "RotationIndex": 3
                     }
                 }
             ],

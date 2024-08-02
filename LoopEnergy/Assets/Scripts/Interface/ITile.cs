@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using EnergyLoop.Game.Tiles.Details;
+using EnergyLoop.Game.Tiles;
 
 namespace EnergyLoop.Game.Interface
 {
@@ -19,6 +20,8 @@ namespace EnergyLoop.Game.Interface
         Vector3 Position { get; }
 
         TileData Data { get; }
+
+        Node Node { get; }
 
         int CurrentRotationIndex { get; }
 

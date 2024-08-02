@@ -93,7 +93,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
         {
             clickedTile.RotateTile();
             noOfTurns++;
-            if (clickedTile.CurrentRotationIndex == clickedTile.Data.Properties.RotationIndex)
+            // if (clickedTile.CurrentRotationIndex == clickedTile.Data.Properties.RotationIndex)
             {
                 CheckedIsAllTileMatched();
             }
@@ -101,7 +101,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
 
         private void CheckedIsAllTileMatched()
         {
-            if (tileGrid.CheckAllTileMatched())
+            if (tileGrid.CheckAllNodesMatched())
             {
                 uIManager.LevelComplete(noOfTurns);
 

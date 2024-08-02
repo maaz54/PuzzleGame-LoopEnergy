@@ -616,8 +616,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TilesGrid: {fileID: 1123002237}
-  gridSizeX: 3
-  gridSizeY: 2
+  gridSizeX: 4
+  gridSizeY: 3
   levelSaveLoadUtility: {fileID: 1211478097}
   buttonLevelSave: {fileID: 430690506}
 --- !u!114 &1211478097
@@ -634,8 +634,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fileName: LevelData
   folderPath: 
-  data:
-    levels: []
+  Data:
+    Levels: []
 --- !u!1 &1727681130
 GameObject:
   m_ObjectHideFlags: 0

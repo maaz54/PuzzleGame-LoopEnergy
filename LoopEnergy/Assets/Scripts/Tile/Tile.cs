@@ -30,7 +30,12 @@ namespace EnergyLoop.Game.Tiles
         private TileData data;
 
         public TileData Data => data;
-        int[] rotationValues = { 360,90, 180, 270 };
+
+        int[] rotationValues = { 360, 270, 180, 90, };
+
+        private Node node;
+
+        public Node Node => node;
 
         int currentRotationIndex;
         public int CurrentRotationIndex => currentRotationIndex;
@@ -47,8 +52,29 @@ namespace EnergyLoop.Game.Tiles
         public void SetTileDetails(TileData data)
         {
             this.data = data;
-            SetZRotation(data.Properties.RotationIndex);
+            // SetZRotation(data.Properties.RotationIndex);
             SetType(this.data.Type);
+            InitializeNode();
+        }
+
+        private void InitializeNode()
+        {
+            if (data.Type == TileType.Power)
+            {
+                node = new Node(1, 1, 1, 1);
+            }
+            else if (data.Type == TileType.Bulb)
+            {
+                node = new Node(0, 0, 1, 0);
+            }
+            else if (data.Type == TileType.Wire1)
+            {
+                node = new Node(0, 1, 0, 1);
+            }
+            else if (data.Type == TileType.Wire2)
+            {
+                node = new Node(1, 0, 0, 1);
+            }
         }
 
         public void RotateTile()
@@ -59,6 +85,7 @@ namespace EnergyLoop.Game.Tiles
                 currentRotationIndex = 0;
             }
             SetZRotation(currentRotationIndex);
+            node.RotateClockwise();
         }
 
         public void SetZRotation(int index)
