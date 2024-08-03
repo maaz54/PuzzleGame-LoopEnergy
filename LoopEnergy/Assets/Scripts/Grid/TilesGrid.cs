@@ -100,110 +100,122 @@ namespace EnergyLoop.Game.TileGrid
             foreach (var tile in gridTiles)
             {
                 if (tile.Data.Type != TileType.None &&
-                    tile.Data.Type != TileType.Power)
+                tile.Data.Type != TileType.Power)
                 {
+                    PowerBreak(tile);
+
                     // Check Up connection
                     if (tile.Node.connections[0] == 1 &&
-                    tile.Data.Properties.y < columns - 1 &&
-                    tile.Data.Type != TileType.None)
+                    tile.Data.Properties.y < columns - 1)
                     {
+                        Debug.Log(tile.Transform.name);
+
                         if (gridTiles[tile.Data.Properties.x, tile.Data.Properties.y + 1].Node.connections[2] == 1)
                         {
-                            // isAllNodesConnected = true;
                             SupplyPower(tile, gridTiles[tile.Data.Properties.x, tile.Data.Properties.y + 1]);
+
                         }
                         else
                         {
                             isAllNodesConnected = false;
-                            PowerBreak(tile, gridTiles[tile.Data.Properties.x, tile.Data.Properties.y + 1]);
-
-                            // break;
                         }
-
+                    }
+                    else if (tile.Node.connections[0] == 1)
+                    {
+                        isAllNodesConnected = false;
                     }
 
                     // Check Down connection
                     if (tile.Node.connections[2] == 1 &&
-                    tile.Data.Properties.y > 0 &&
-                    tile.Data.Type != TileType.None)
+                    tile.Data.Properties.y > 0)
                     {
+                        Debug.Log(tile.Transform.name);
+
                         if (gridTiles[tile.Data.Properties.x, tile.Data.Properties.y - 1].Node.connections[0] == 1)
                         {
-                            // isAllNodesConnected = true;
                             SupplyPower(tile, gridTiles[tile.Data.Properties.x, tile.Data.Properties.y - 1]);
+
                         }
                         else
                         {
                             isAllNodesConnected = false;
-                            PowerBreak(tile, gridTiles[tile.Data.Properties.x, tile.Data.Properties.y - 1]);
-
-                            // break;
                         }
-
+                    }
+                    else if (tile.Node.connections[2] == 1)
+                    {
+                        isAllNodesConnected = false;
                     }
 
                     // Check right connection
                     if (tile.Node.connections[1] == 1 &&
-                    tile.Data.Properties.x < rows - 1 &&
-                    tile.Data.Type != TileType.None)
+                    tile.Data.Properties.x < rows - 1)
                     {
                         if (gridTiles[tile.Data.Properties.x + 1, tile.Data.Properties.y].Node.connections[3] == 1)
                         {
                             // isAllNodesConnected = true;
                             SupplyPower(tile, gridTiles[tile.Data.Properties.x + 1, tile.Data.Properties.y]);
+
                         }
                         else
                         {
                             isAllNodesConnected = false;
-                            PowerBreak(tile, gridTiles[tile.Data.Properties.x + 1, tile.Data.Properties.y]);
-
-                            // break;
                         }
+                    }
+                    else if (tile.Node.connections[1] == 1)
+                    {
+                        isAllNodesConnected = false;
                     }
 
                     // Check left connection
                     if (tile.Node.connections[3] == 1 &&
-                    tile.Data.Properties.x > 0 &&
-                    tile.Data.Type != TileType.None)
+                    tile.Data.Properties.x > 0)
                     {
                         if (gridTiles[tile.Data.Properties.x - 1, tile.Data.Properties.y].Node.connections[1] == 1)
                         {
                             // isAllNodesConnected = true;
                             SupplyPower(tile, gridTiles[tile.Data.Properties.x - 1, tile.Data.Properties.y]);
+
                         }
                         else
                         {
                             isAllNodesConnected = false;
-                            PowerBreak(tile, gridTiles[tile.Data.Properties.x - 1, tile.Data.Properties.y]);
-
-                            // break;
                         }
-
+                    }
+                    else if (tile.Node.connections[3] == 1)
+                    {
+                        isAllNodesConnected = false;
                     }
 
                 }
             }
 
-            void SupplyPower(ITile currentTile, ITile OtherTile)
-            {
-                if (OtherTile.IsConnectedWithPower)
-                {
-                    currentTile.StartGlow();
-                }
-                else if (currentTile.IsConnectedWithPower)
-                {
-                    OtherTile.StartGlow();
-                }
-            }
-
-            void PowerBreak(ITile currentTile, ITile OtherTile)
-            {
-                currentTile.StopGlowing();
-            }
-
-
             return isAllNodesConnected;
         }
+
+
+        void SupplyPower(ITile currentTile, ITile OtherTile)
+        {
+            if (OtherTile.IsConnectedWithPower)
+            {
+                currentTile.StartGlow();
+            }
+            else if (currentTile.IsConnectedWithPower)
+            {
+                OtherTile.StartGlow();
+            }
+            else
+            {
+                currentTile.StopGlowing();
+                OtherTile.StopGlowing();
+            }
+        }
+
+        void PowerBreak(ITile currentTile)
+        {
+            currentTile.StopGlowing();
+        }
+
+
 
         /// <summary>
         /// remove tiles at runtime
