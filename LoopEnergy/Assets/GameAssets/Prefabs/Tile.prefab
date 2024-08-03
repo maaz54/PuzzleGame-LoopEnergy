@@ -142,7 +142,9 @@ MonoBehaviour:
     Type: 4
   - sprite: {fileID: 0}
     Type: 0
-  spriteRenderer: {fileID: 5842763235680792795}
+  spriteTileType: {fileID: 5842763235680792795}
+  BgSprite: {fileID: 2259640437569465513}
+  glowColor: {r: 0.92028606, g: 1, b: 0, a: 1}
 --- !u!65 &1264406696895126567
 BoxCollider:
   m_ObjectHideFlags: 0
