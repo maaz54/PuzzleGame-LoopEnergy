@@ -20,6 +20,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
         private ITile[,] gridTiles;
 
         private int noOfTurns = 0;
+        private int currentLevel = 0;
 
         private void Start()
         {
@@ -35,6 +36,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
             if (!levelPrograssionSaveLoadUtility.IsProgressFileSaved)
             {
                 levelPrograssionSaveLoadUtility.InitializeLevelProgression(levelData);
+                levelsProgression = levelPrograssionSaveLoadUtility.levelProgression;
             }
             else
             {
@@ -46,6 +48,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
         {
             if (!levelProgressData.IsLocked)
             {
+                currentLevel = levelProgressData.LevelNo;
                 uIManager.PlayGame();
                 GenerateLevel(levelProgressData.LevelNo);
             }
@@ -54,18 +57,21 @@ namespace EnergyLoop.Game.Gameplay.Manager
         private void OnPlayGame()
         {
             LevelProgressData levelProgressData = levelsProgression.LevelsProgressData.FindLast(level => !level.IsLocked);
+            currentLevel = levelProgressData.LevelNo;
             uIManager.PlayGame();
-            GenerateLevel(1);
+            GenerateLevel(currentLevel);
         }
 
 
         private void GenerateLevel(int levelNo)
         {
+            tileGrid.EmptyGrid();
             gridTiles = tileGrid.GenerateTiles(levelData.Levels[levelNo - 1].XLenght, levelData.Levels[levelNo - 1].YLenght);
             tileGrid.SetLevelDetails(levelData.Levels[levelNo - 1]);
             tileGrid.RandomizeRotation();
             TilesListener();
             noOfTurns = 0;
+            uIManager.SetScore(noOfTurns);
         }
 
         /// <summary>
@@ -93,6 +99,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
         {
             clickedTile.RotateTile();
             noOfTurns++;
+            uIManager.SetScore(noOfTurns);
             // if (clickedTile.CurrentRotationIndex == clickedTile.Data.Properties.RotationIndex)
             {
                 CheckedIsAllTileMatched();
@@ -103,12 +110,18 @@ namespace EnergyLoop.Game.Gameplay.Manager
         {
             if (tileGrid.CheckAllNodesMatched())
             {
-                uIManager.LevelComplete(noOfTurns);
+                int levelPrograssionIndex = levelsProgression.LevelsProgressData.FindIndex(level => level.LevelNo == currentLevel); ;
+                levelsProgression.LevelsProgressData[levelPrograssionIndex].NoOfTurn = noOfTurns;
+                levelsProgression.LevelsProgressData[levelPrograssionIndex].Completed = true;
+                if (currentLevel < levelsProgression.LevelsProgressData.Count - 1)
+                {
+                    levelsProgression.LevelsProgressData[levelPrograssionIndex + 1].IsLocked = false;
+                }
+                levelPrograssionSaveLoadUtility.SaveProgress(levelsProgression);
 
+                uIManager.LevelComplete(noOfTurns);
             }
 
         }
-
-
     }
 }

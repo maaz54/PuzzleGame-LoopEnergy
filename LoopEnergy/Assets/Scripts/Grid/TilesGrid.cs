@@ -107,7 +107,8 @@ namespace EnergyLoop.Game.TileGrid
                 {
                     // Check Up connection
                     if (tile.Node.connections[0] == 1 &&
-                    tile.Data.Properties.y < columns - 1)
+                    tile.Data.Properties.y < columns - 1 &&
+                    tile.Data.Type != TileType.None)
                     {
                         if (gridTiles[tile.Data.Properties.x, tile.Data.Properties.y + 1].Node.connections[2] == 1)
                         {
@@ -122,7 +123,8 @@ namespace EnergyLoop.Game.TileGrid
 
                     // Check Down connection
                     if (tile.Node.connections[2] == 1 &&
-                    tile.Data.Properties.y > 0)
+                    tile.Data.Properties.y > 0 &&
+                    tile.Data.Type != TileType.None)
                     {
                         if (gridTiles[tile.Data.Properties.x, tile.Data.Properties.y - 1].Node.connections[0] == 1)
                         {
@@ -137,7 +139,8 @@ namespace EnergyLoop.Game.TileGrid
 
                     // Check right connection
                     if (tile.Node.connections[1] == 1 &&
-                    tile.Data.Properties.x < rows - 1)
+                    tile.Data.Properties.x < rows - 1 &&
+                    tile.Data.Type != TileType.None)
                     {
                         if (gridTiles[tile.Data.Properties.x + 1, tile.Data.Properties.y].Node.connections[3] == 1)
                         {
@@ -152,7 +155,8 @@ namespace EnergyLoop.Game.TileGrid
 
                     // Check left connection
                     if (tile.Node.connections[3] == 1 &&
-                    tile.Data.Properties.x > 0)
+                    tile.Data.Properties.x > 0 &&
+                    tile.Data.Type != TileType.None)
                     {
                         if (gridTiles[tile.Data.Properties.x - 1, tile.Data.Properties.y].Node.connections[1] == 1)
                         {

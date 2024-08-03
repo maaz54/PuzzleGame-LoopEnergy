@@ -23,6 +23,7 @@ public class LevelProgressData
     public int LevelNo;
     public int NoOfTurn;
     public bool IsLocked;
+    public bool Completed;
 
     public LevelProgressData(int LevelNo)
     {

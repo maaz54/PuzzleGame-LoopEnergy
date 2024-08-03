@@ -59,7 +59,11 @@ namespace EnergyLoop.Game.Tiles
 
         private void InitializeNode()
         {
-            if (data.Type == TileType.Power)
+            if (data.Type == TileType.None)
+            {
+                node = new Node(0, 0, 0, 0);
+            }
+            else if (data.Type == TileType.Power)
             {
                 node = new Node(1, 1, 1, 1);
             }

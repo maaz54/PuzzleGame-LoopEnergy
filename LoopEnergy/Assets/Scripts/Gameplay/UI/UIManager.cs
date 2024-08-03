@@ -16,7 +16,8 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
 
         /// UI Buttons
         [SerializeField] Button gameStartButton;
-        [SerializeField] Button nextLevelButton;
+        [SerializeField] Button tapToContinueButton;
+        [SerializeField] Button selectLevelButton;
 
         /// Texts
         [SerializeField] TextMeshProUGUI currentScoreText;
@@ -35,7 +36,8 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
         void Start()
         {
             gameStartButton.onClick.AddListener(OnGameStart);
-            nextLevelButton.onClick.AddListener(OnNextLevel);
+            tapToContinueButton.onClick.AddListener(() => EnablePanel(menuPanel));
+            selectLevelButton.onClick.AddListener(OnSelectLevelButton);
 
             EnablePanel(menuPanel);
         }
@@ -65,15 +67,15 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
 
 
         // Set the current score text
-        public void SetScore(int score)
+        public void SetScore(int turns)
         {
-            currentScoreText.text = "Score: " + score.ToString();
+            currentScoreText.text = "Turns: " + turns.ToString();
         }
 
         // Handle level completion event
-        public void LevelComplete(int score)
+        public void LevelComplete(int turns)
         {
-            finalScoreText.text = " : " + score.ToString();
+            finalScoreText.text = " : " + turns.ToString();
             EnablePanel(LevelCompletePanel);
         }
 
@@ -83,6 +85,11 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
             OnNextLevelButton?.Invoke();
         }
 
+        private void OnSelectLevelButton()
+        {
+            EnablePanel(LevelsPanel);
+        }
+
         // Enable the specified panel and disable others
         private void EnablePanel(GameObject panel)
         {
@@ -90,11 +97,8 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
             GameplayPanel.SetActive(false);
             LevelCompletePanel.SetActive(false);
             LevelsPanel.SetActive(false);
-            
 
             panel.SetActive(true);
-
-            Debug.Log("s" + panel.name);
         }
 
     }
