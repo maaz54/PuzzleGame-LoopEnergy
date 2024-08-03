@@ -25,12 +25,20 @@ namespace EnergyLoop.Game.Interface
 
         int CurrentRotationIndex { get; }
 
+        bool IsConnectedWithPower { get; set; }
+
         //setting tile Details
         void SetTileDetails(TileData details);
         // setting tile position
         void SetPosition(Vector3 position);
         // destroying tile
         void DestroyTile();
+
+        void SetMakeBGInvisible();
+
+        void StartGlow();
+
+        void StopGlowing();
 
         void SetType(TileType type);
 

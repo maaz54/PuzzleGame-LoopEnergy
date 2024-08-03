@@ -15,7 +15,10 @@ namespace EnergyLoop.Game.Tiles
         /// </summary>
         public TileClickedEvent OnTileClicked { get; set; } = new();
         [SerializeField] TileView[] tileView;
-        [SerializeField] SpriteRenderer spriteRenderer;
+        [SerializeField] SpriteRenderer spriteTileType;
+
+        [SerializeField] SpriteRenderer BgSprite;
+        [SerializeField] Color glowColor;
 
         private Vector3 position;
         /// <summary>
@@ -40,6 +43,8 @@ namespace EnergyLoop.Game.Tiles
         int currentRotationIndex;
         public int CurrentRotationIndex => currentRotationIndex;
 
+        public bool IsConnectedWithPower { get; set; }
+
         /// <summary>
         /// setting tile position
         /// </summary>
@@ -49,22 +54,41 @@ namespace EnergyLoop.Game.Tiles
             transform.position = position;
         }
 
+        public void SetMakeBGInvisible()
+        {
+            BgSprite.enabled = false;
+        }
+
+        public void StartGlow()
+        {
+            spriteTileType.color = glowColor;
+            IsConnectedWithPower  = true;
+        }
+
+        public void StopGlowing()
+        {
+            spriteTileType.color = Color.white;
+            IsConnectedWithPower  = false;
+        }
+
         public void SetTileDetails(TileData data)
         {
             this.data = data;
-            // SetZRotation(data.Properties.RotationIndex);
             SetType(this.data.Type);
             InitializeNode();
         }
 
         private void InitializeNode()
         {
+            StopGlowing();
             if (data.Type == TileType.None)
             {
                 node = new Node(0, 0, 0, 0);
             }
             else if (data.Type == TileType.Power)
             {
+                IsConnectedWithPower = true;
+                StartGlow();
                 node = new Node(1, 1, 1, 1);
             }
             else if (data.Type == TileType.Bulb)
@@ -100,8 +124,8 @@ namespace EnergyLoop.Game.Tiles
 
         public void SetType(TileType type)
         {
-            spriteRenderer.sprite = tileView.First(view => view.Type == type).sprite;
-            spriteRenderer.size = new Vector2(1, 1);
+            spriteTileType.sprite = tileView.First(view => view.Type == type).sprite;
+            spriteTileType.size = new Vector2(1, 1);
         }
 
         /// <summary>
@@ -111,7 +135,6 @@ namespace EnergyLoop.Game.Tiles
         {
             transform.localScale = Vector3.one * 1.1f;
             OnTileClicked?.Invoke(this);
-
         }
         /// <summary>
         /// tile transfrom

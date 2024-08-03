@@ -28,6 +28,7 @@ namespace EnergyLoop.Game.TileGrid
         /// Tiles gride
         /// </summary>
         private ITile[,] gridTiles;
+
         /// <summary>
         /// Holding tile positon of grid
         /// </summary>
@@ -39,13 +40,6 @@ namespace EnergyLoop.Game.TileGrid
         public ITile[,] GenerateTiles(int xLength, int yLength)
         {
             gridTiles = new ITile[xLength, yLength];
-
-            int rows = gridTiles.GetLength(0);
-            int columns = gridTiles.GetLength(1);
-
-            Debug.Log("Rows: " + rows);
-            Debug.Log("columns: " + columns);
-
 
             tileGridPositions = new Vector3[xLength, yLength];
             Vector3 position = new(-xLength / 2, -yLength / 2, 0);
@@ -80,6 +74,7 @@ namespace EnergyLoop.Game.TileGrid
         {
             foreach (var tile in gridTiles)
             {
+                tile.SetMakeBGInvisible();
                 if (tile.Data.Type != TileType.None &&
                     tile.Data.Type != TileType.Power)
                 {
@@ -91,6 +86,8 @@ namespace EnergyLoop.Game.TileGrid
                     }
                 }
             }
+
+            CheckAllNodesMatched();
         }
 
         public bool CheckAllNodesMatched()
@@ -98,7 +95,7 @@ namespace EnergyLoop.Game.TileGrid
             int rows = gridTiles.GetLength(0);
             int columns = gridTiles.GetLength(1);
 
-            bool isAllNodesConnected = false;
+            bool isAllNodesConnected = true;
 
             foreach (var tile in gridTiles)
             {
@@ -112,13 +109,17 @@ namespace EnergyLoop.Game.TileGrid
                     {
                         if (gridTiles[tile.Data.Properties.x, tile.Data.Properties.y + 1].Node.connections[2] == 1)
                         {
-                            isAllNodesConnected = true;
+                            // isAllNodesConnected = true;
+                            SupplyPower(tile, gridTiles[tile.Data.Properties.x, tile.Data.Properties.y + 1]);
                         }
                         else
                         {
                             isAllNodesConnected = false;
-                            break;
+                            PowerBreak(tile, gridTiles[tile.Data.Properties.x, tile.Data.Properties.y + 1]);
+
+                            // break;
                         }
+
                     }
 
                     // Check Down connection
@@ -128,13 +129,17 @@ namespace EnergyLoop.Game.TileGrid
                     {
                         if (gridTiles[tile.Data.Properties.x, tile.Data.Properties.y - 1].Node.connections[0] == 1)
                         {
-                            isAllNodesConnected = true;
+                            // isAllNodesConnected = true;
+                            SupplyPower(tile, gridTiles[tile.Data.Properties.x, tile.Data.Properties.y - 1]);
                         }
                         else
                         {
                             isAllNodesConnected = false;
-                            break;
+                            PowerBreak(tile, gridTiles[tile.Data.Properties.x, tile.Data.Properties.y - 1]);
+
+                            // break;
                         }
+
                     }
 
                     // Check right connection
@@ -144,12 +149,15 @@ namespace EnergyLoop.Game.TileGrid
                     {
                         if (gridTiles[tile.Data.Properties.x + 1, tile.Data.Properties.y].Node.connections[3] == 1)
                         {
-                            isAllNodesConnected = true;
+                            // isAllNodesConnected = true;
+                            SupplyPower(tile, gridTiles[tile.Data.Properties.x + 1, tile.Data.Properties.y]);
                         }
                         else
                         {
                             isAllNodesConnected = false;
-                            break;
+                            PowerBreak(tile, gridTiles[tile.Data.Properties.x + 1, tile.Data.Properties.y]);
+
+                            // break;
                         }
                     }
 
@@ -160,17 +168,40 @@ namespace EnergyLoop.Game.TileGrid
                     {
                         if (gridTiles[tile.Data.Properties.x - 1, tile.Data.Properties.y].Node.connections[1] == 1)
                         {
-                            isAllNodesConnected = true;
+                            // isAllNodesConnected = true;
+                            SupplyPower(tile, gridTiles[tile.Data.Properties.x - 1, tile.Data.Properties.y]);
                         }
                         else
                         {
                             isAllNodesConnected = false;
-                            break;
+                            PowerBreak(tile, gridTiles[tile.Data.Properties.x - 1, tile.Data.Properties.y]);
+
+                            // break;
                         }
+
                     }
 
                 }
             }
+
+            void SupplyPower(ITile currentTile, ITile OtherTile)
+            {
+                if (OtherTile.IsConnectedWithPower)
+                {
+                    currentTile.StartGlow();
+                }
+                else if (currentTile.IsConnectedWithPower)
+                {
+                    OtherTile.StartGlow();
+                }
+            }
+
+            void PowerBreak(ITile currentTile, ITile OtherTile)
+            {
+                currentTile.StopGlowing();
+            }
+
+
             return isAllNodesConnected;
         }
 
@@ -186,14 +217,6 @@ namespace EnergyLoop.Game.TileGrid
                     item.DestroyTile();
                 }
             }
-        }
-
-        /// <summary>
-        /// return the tile position against the tile index x and y
-        /// </summary>
-        private Vector3 GetPositionFromIndex(int x, int y)
-        {
-            return tileGridPositions[x, y];
         }
     }
 }
