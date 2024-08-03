@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using EnergyLoop.Game.Gameplay.Manager.UI;
+using EnergyLoop.Game.Gameplay.SFX;
 using EnergyLoop.Game.Interface;
 using EnergyLoop.Game.LevelSerializer;
 using EnergyLoop.Game.TileGrid;
+using EnergyLoop.Game.Tiles.Details;
 using UnityEngine;
 
 namespace EnergyLoop.Game.Gameplay.Manager
@@ -15,6 +17,8 @@ namespace EnergyLoop.Game.Gameplay.Manager
         [SerializeField] LevelSaveLoadUtility levelSaveLoadUtility;
         [SerializeField] TilesGrid tileGrid;
         [SerializeField] UIManager uIManager;
+        [SerializeField] CameraBehavior cameraBehavior;
+        [SerializeField] SFXPlayer sFXPlayer;
         LevelData levelData;
         LevelsProgression levelsProgression;
         private ITile[,] gridTiles;
@@ -60,6 +64,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
             currentLevel = levelProgressData.LevelNo;
             uIManager.PlayGame();
             GenerateLevel(currentLevel);
+
         }
 
 
@@ -72,6 +77,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
             TilesListener();
             noOfTurns = 0;
             uIManager.SetScore(noOfTurns);
+            cameraBehavior.AdjustCameraSize(levelData.Levels[levelNo - 1].XLenght, levelData.Levels[levelNo - 1].YLenght);
         }
 
         /// <summary>
@@ -81,8 +87,8 @@ namespace EnergyLoop.Game.Gameplay.Manager
         {
             foreach (var tile in gridTiles)
             {
-                if (tile.Data.Type != Tiles.Details.TileType.None &&
-                    tile.Data.Type != Tiles.Details.TileType.Power)
+                if (tile.Data.Type != Tiles.Details.TileType.None)// &&
+                                                                  // tile.Data.Type != Tiles.Details.TileType.Power)
                 {
                     tile.OnTileClicked.RemoveAllListeners();
                     tile.OnTileClicked.AddListener(OnTileClicked);
@@ -97,12 +103,19 @@ namespace EnergyLoop.Game.Gameplay.Manager
         /// <param name="clickedTile"></param>
         private void OnTileClicked(ITile clickedTile)
         {
-            clickedTile.RotateTile();
-            noOfTurns++;
-            uIManager.SetScore(noOfTurns);
-            // if (clickedTile.CurrentRotationIndex == clickedTile.Data.Properties.RotationIndex)
+            if (clickedTile.Data.Type == TileType.Power)
             {
+                sFXPlayer.PlayAudioClip("foul");
+            }
+            else
+            {
+
+                clickedTile.RotateTile();
+                noOfTurns++;
+                uIManager.SetScore(noOfTurns);
+
                 CheckedIsAllTileMatched();
+                sFXPlayer.PlayAudioClip("flip");
             }
         }
 
@@ -120,6 +133,8 @@ namespace EnergyLoop.Game.Gameplay.Manager
                 levelPrograssionSaveLoadUtility.SaveProgress(levelsProgression);
 
                 uIManager.LevelComplete(noOfTurns);
+                sFXPlayer.PlayAudioClip("win");
+
             }
 
         }
