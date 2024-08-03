@@ -140,6 +140,8 @@ MonoBehaviour:
     Type: 3
   - sprite: {fileID: 21300000, guid: 041e52caf6ef3a14b8cfeee8ef4f9755, type: 3}
     Type: 4
+  - sprite: {fileID: 21300000, guid: fe2e86f2aa45afc42b974b0a63d9872b, type: 3}
+    Type: 5
   - sprite: {fileID: 0}
     Type: 0
   spriteTileType: {fileID: 5842763235680792795}
@@ -231,7 +233,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 041e52caf6ef3a14b8cfeee8ef4f9755, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe2e86f2aa45afc42b974b0a63d9872b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

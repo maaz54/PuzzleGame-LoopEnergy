@@ -45,5 +45,6 @@ namespace EnergyLoop.Game.Tiles.Details
         Bulb,
         Wire1,
         Wire2,
+        Wire3
     }
 }

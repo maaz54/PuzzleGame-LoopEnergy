@@ -26,6 +26,7 @@ namespace EnergyLoop.Game.LevelMaker
         [SerializeField] private int gridSizeY;
         [SerializeField] LevelSaveLoadUtility levelSaveLoadUtility;
         [SerializeField] Button buttonLevelSave;
+        [SerializeField] Button buttonResetGrid;
         /// <summary>
         /// Tiles Grid
         /// use to handle tiles listners like when use select tiles
@@ -39,6 +40,7 @@ namespace EnergyLoop.Game.LevelMaker
         {
             this.iGrid = TilesGrid;
             buttonLevelSave.onClick.AddListener(SaveLevel);
+            buttonResetGrid.onClick.AddListener(Init);
         }
 
         private void SaveLevel()

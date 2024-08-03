@@ -62,13 +62,13 @@ namespace EnergyLoop.Game.Tiles
         public void StartGlow()
         {
             spriteTileType.color = glowColor;
-            IsConnectedWithPower  = true;
+            IsConnectedWithPower = true;
         }
 
         public void StopGlowing()
         {
             spriteTileType.color = Color.white;
-            IsConnectedWithPower  = false;
+            IsConnectedWithPower = false;
         }
 
         public void SetTileDetails(TileData data)
@@ -102,6 +102,10 @@ namespace EnergyLoop.Game.Tiles
             else if (data.Type == TileType.Wire2)
             {
                 node = new Node(1, 0, 0, 1);
+            }
+            else if (data.Type == TileType.Wire3)
+            {
+                node = new Node(1, 1, 0, 1);
             }
         }
 

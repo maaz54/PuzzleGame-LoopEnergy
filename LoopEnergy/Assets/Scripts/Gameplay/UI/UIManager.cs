@@ -75,7 +75,7 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
         // Handle level completion event
         public void LevelComplete(int turns)
         {
-            finalScoreText.text = " : " + turns.ToString();
+            finalScoreText.text = "Turns: " + turns.ToString();
             EnablePanel(LevelCompletePanel);
         }
 

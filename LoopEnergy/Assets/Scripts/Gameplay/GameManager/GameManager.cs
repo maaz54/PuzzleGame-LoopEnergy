@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using EnergyLoop.Game.Gameplay.Manager.UI;
 using EnergyLoop.Game.Gameplay.SFX;
 using EnergyLoop.Game.Interface;
 using EnergyLoop.Game.LevelSerializer;
 using EnergyLoop.Game.TileGrid;
 using EnergyLoop.Game.Tiles.Details;
+using TMPro;
 using UnityEngine;
 
 namespace EnergyLoop.Game.Gameplay.Manager
@@ -25,6 +28,8 @@ namespace EnergyLoop.Game.Gameplay.Manager
 
         private int noOfTurns = 0;
         private int currentLevel = 0;
+
+        bool isGameCompleted = false;
 
         private void Start()
         {
@@ -78,6 +83,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
             noOfTurns = 0;
             uIManager.SetScore(noOfTurns);
             cameraBehavior.AdjustCameraSize(levelData.Levels[levelNo - 1].XLenght, levelData.Levels[levelNo - 1].YLenght);
+            isGameCompleted = false;
         }
 
         /// <summary>
@@ -103,23 +109,26 @@ namespace EnergyLoop.Game.Gameplay.Manager
         /// <param name="clickedTile"></param>
         private void OnTileClicked(ITile clickedTile)
         {
-            if (clickedTile.Data.Type == TileType.Power)
+            if (!isGameCompleted)
             {
-                sFXPlayer.PlayAudioClip("foul");
-            }
-            else
-            {
+                if (clickedTile.Data.Type == TileType.Power)
+                {
+                    sFXPlayer.PlayAudioClip("foul");
+                }
+                else
+                {
 
-                clickedTile.RotateTile();
-                noOfTurns++;
-                uIManager.SetScore(noOfTurns);
+                    clickedTile.RotateTile();
+                    noOfTurns++;
+                    uIManager.SetScore(noOfTurns);
 
-                CheckedIsAllTileMatched();
-                sFXPlayer.PlayAudioClip("flip");
+                    sFXPlayer.PlayAudioClip("flip");
+                    _ = CheckedIsAllTileMatched();
+                }
             }
         }
 
-        private void CheckedIsAllTileMatched()
+        private async Task CheckedIsAllTileMatched()
         {
             if (tileGrid.CheckAllNodesMatched())
             {
@@ -132,8 +141,10 @@ namespace EnergyLoop.Game.Gameplay.Manager
                 }
                 levelPrograssionSaveLoadUtility.SaveProgress(levelsProgression);
 
-                uIManager.LevelComplete(noOfTurns);
                 sFXPlayer.PlayAudioClip("win");
+                isGameCompleted = true;
+                await Task.Delay(TimeSpan.FromSeconds(2));
+                uIManager.LevelComplete(noOfTurns);
 
             }
 
