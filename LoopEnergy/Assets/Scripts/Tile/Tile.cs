@@ -50,6 +50,7 @@ namespace EnergyLoop.Game.Tiles
         [SerializeField] int objectID = 0;
         public int ObjectID => objectID;
 
+
         private void OnDisable()
         {
             node = null;
@@ -77,12 +78,15 @@ namespace EnergyLoop.Game.Tiles
         {
             spriteTileType.color = glowColor;
             IsConnectedWithPower = true;
+            spriteTileType.gameObject.transform.localScale = Vector3.one * 1.1f;
         }
 
         public void StopGlowing()
         {
             spriteTileType.color = Color.white;
             IsConnectedWithPower = false;
+            spriteTileType.gameObject.transform.localScale = Vector3.one;
+
         }
 
         public void SetTileDetails(TileData data, bool initializeNode)

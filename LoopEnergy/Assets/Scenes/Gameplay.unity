@@ -1441,7 +1441,7 @@ MonoBehaviour:
   audiosRecord:
   - AudioClips:
     - {fileID: 8300000, guid: 255a425bf9caf0a4e9a87f2eb15eda3d, type: 3}
-    Name: flip
+    Name: tick
   - AudioClips:
     - {fileID: 8300000, guid: 1c109c1ac0dcf694f95c854a094169d8, type: 3}
     Name: foul
@@ -1705,7 +1705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefabe: {fileID: 9049439014800908758, guid: 7ab69cb77eb881b46be53e91f1404616, type: 3}
-  tilesOffset: 1.01
+  tilesOffset: 1.1
 --- !u!1 &1165237708
 GameObject:
   m_ObjectHideFlags: 0

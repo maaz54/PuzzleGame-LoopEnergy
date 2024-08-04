@@ -27,7 +27,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
 
         LevelData levelData;
         LevelsProgression levelsProgression;
-        private ITile[,] gridTiles;
+        private ITile[,] tiles;
 
         private int noOfTurns = 0;
         private int currentLevel = 0;
@@ -41,6 +41,13 @@ namespace EnergyLoop.Game.Gameplay.Manager
             uIManager.SetLevelDetails(levelsProgression);
             uIManager.OnLevelButton += OnLevelButton;
             uIManager.OnGameStartButton += OnPlayGame;
+
+            tileGrid.PlaySFX += PlaySFX;
+        }
+
+        private void PlaySFX(string name)
+        {
+            sFXPlayer.PlayAudioClip(name);
         }
 
         void LoadingUtilities()
@@ -80,7 +87,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
         private void GenerateLevel(int levelNo)
         {
             tileGrid.EmptyGrid();
-            gridTiles = tileGrid.GenerateTiles(levelData.Levels[levelNo - 1].XLenght, levelData.Levels[levelNo - 1].YLenght);
+            tiles = tileGrid.GenerateTiles(levelData.Levels[levelNo - 1].XLenght, levelData.Levels[levelNo - 1].YLenght);
             tileGrid.SetLevelDetails(levelData.Levels[levelNo - 1]);
             tileGrid.RandomizeRotation();
             TilesListener();
@@ -88,6 +95,9 @@ namespace EnergyLoop.Game.Gameplay.Manager
             uIManager.SetScore(noOfTurns);
             cameraBehavior.AdjustCameraSize(levelData.Levels[levelNo - 1].XLenght, levelData.Levels[levelNo - 1].YLenght);
             isGameCompleted = false;
+            cameraBehavior.TriggerShake();
+            PlaySFX("tick");
+
         }
 
         /// <summary>
@@ -95,7 +105,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
         /// </summary>
         private void TilesListener()
         {
-            foreach (var tile in gridTiles)
+            foreach (var tile in tiles)
             {
                 if (tile.Data.Type != Tiles.Details.TileType.None)// &&
                                                                   // tile.Data.Type != Tiles.Details.TileType.Power)
@@ -117,7 +127,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
             {
                 if (clickedTile.Data.Type == TileType.Power)
                 {
-                    sFXPlayer.PlayAudioClip("foul");
+                    PlaySFX("foul");
                     cameraBehavior.TriggerShake();
                 }
                 else
@@ -127,7 +137,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
                     noOfTurns++;
                     uIManager.SetScore(noOfTurns);
 
-                    sFXPlayer.PlayAudioClip("flip");
+                    PlaySFX("tick");
                     _ = CheckedIsAllTileMatched();
                 }
             }
@@ -146,11 +156,12 @@ namespace EnergyLoop.Game.Gameplay.Manager
                 }
                 levelPrograssionSaveLoadUtility.SaveProgress(levelsProgression);
 
-                sFXPlayer.PlayAudioClip("win");
+                PlaySFX("win");
                 isGameCompleted = true;
+                cameraBehavior.TriggerShake();
+                await tileGrid.GlowAllTilesEffect();
                 await Task.Delay(TimeSpan.FromSeconds(2));
                 uIManager.LevelComplete(noOfTurns);
-
             }
 
         }

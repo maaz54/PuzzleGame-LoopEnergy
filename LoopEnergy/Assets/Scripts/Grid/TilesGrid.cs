@@ -37,6 +37,8 @@ namespace EnergyLoop.Game.TileGrid
 
         IObjectPooler objectPooler;
 
+        public Action<string> PlaySFX;
+
         public void Initialize(IObjectPooler objectPooler)
         {
             this.objectPooler = objectPooler;
@@ -55,7 +57,7 @@ namespace EnergyLoop.Game.TileGrid
             {
                 for (int y = 0; y < yLength; y++)
                 {
-                    ITile tile = objectPooler.Pool<Tile>(tilePrefabe,transform);
+                    ITile tile = objectPooler.Pool<Tile>(tilePrefabe, transform);
                     TileData data = new TileData(TileType.None, new(x, y, 0));
                     tile.SetTileDetails(data, true);
                     tile.SetPosition(position);
@@ -200,6 +202,30 @@ namespace EnergyLoop.Game.TileGrid
             return isAllNodesConnected;
         }
 
+        public async Task GlowAllTilesEffect()
+        {
+            foreach (var tile in gridTiles)
+            {
+                if (tile.Data.Type != TileType.None)
+                {
+                    tile.StopGlowing();
+                    PlaySFX?.Invoke("tick");
+                    await Task.Delay(TimeSpan.FromSeconds(.1));
+                }
+            }
+
+            await Task.Delay(TimeSpan.FromSeconds(.25));
+
+            foreach (var tile in gridTiles)
+            {
+                if (tile.Data.Type != TileType.None)
+                {
+                    tile.StartGlow();
+                    PlaySFX?.Invoke("tick");
+                    await Task.Delay(TimeSpan.FromSeconds(.1));
+                }
+            }
+        }
 
         void SupplyPower(ITile currentTile, ITile OtherTile)
         {
