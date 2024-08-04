@@ -39,7 +39,7 @@
                     "Properties": {
                         "x": 2,
                         "y": 0,
-                        "RotationIndex": 0
+                        "RotationIndex": 2
                     }
                 },
                 {
@@ -65,15 +65,15 @@
                     }
                 },
                 {
-                    "Type": 2,
+                    "Type": 1,
                     "Properties": {
                         "x": 0,
                         "y": 1,
-                        "RotationIndex": 0
+                        "RotationIndex": 3
                     }
                 },
                 {
-                    "Type": 2,
+                    "Type": 0,
                     "Properties": {
                         "x": 1,
                         "y": 0,
@@ -89,11 +89,11 @@
                     }
                 },
                 {
-                    "Type": 5,
+                    "Type": 2,
                     "Properties": {
                         "x": 2,
                         "y": 0,
-                        "RotationIndex": 0
+                        "RotationIndex": 2
                     }
                 },
                 {
@@ -103,9 +103,1061 @@
                         "y": 1,
                         "RotationIndex": 3
                     }
+                }
+            ],
+            "XLenght": 3,
+            "YLenght": 2
+        },
+        {
+            "Grid": [
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
                 },
                 {
                     "Type": 1,
+                    "Properties": {
+                        "x": 0,
+                        "y": 2,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 1,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 2,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 2,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 3,
+                        "y": 0,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 3,
+                        "y": 1,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                }
+            ],
+            "XLenght": 4,
+            "YLenght": 3
+        },
+        {
+            "Grid": [
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 1,
+                    "Properties": {
+                        "x": 0,
+                        "y": 2,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 1,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 2,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 2,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 2,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 3,
+                        "y": 0,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 3,
+                        "y": 1,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                }
+            ],
+            "XLenght": 4,
+            "YLenght": 3
+        },
+        {
+            "Grid": [
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 0,
+                        "y": 0,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 0,
+                        "y": 1,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 1,
+                    "Properties": {
+                        "x": 0,
+                        "y": 3,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 1,
+                        "y": 2,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 3,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 2,
+                        "y": 0,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 3,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 3,
+                        "y": 1,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 3,
+                        "y": 2,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 3,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 4,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 4,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 4,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 1,
+                    "Properties": {
+                        "x": 4,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                }
+            ],
+            "XLenght": 5,
+            "YLenght": 4
+        },
+        {
+            "Grid": [
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 0,
+                        "y": 0,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 0,
+                        "y": 1,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 0,
+                        "y": 3,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 1,
+                        "y": 1,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 1,
+                        "y": 3,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 2,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 2,
+                        "y": 2,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 2,
+                        "y": 3,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 3,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 3,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 4,
+                        "y": 0,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 4,
+                        "y": 1,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 4,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 1,
+                    "Properties": {
+                        "x": 4,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                }
+            ],
+            "XLenght": 5,
+            "YLenght": 4
+        },
+        {
+            "Grid": [
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 0,
+                        "y": 0,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 0,
+                        "y": 1,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 0,
+                        "y": 3,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 0,
+                        "y": 6,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 2,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 1,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 1,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 2,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 2,
+                        "y": 3,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 2,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 1,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 3,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 3,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 3,
+                        "y": 4,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 3,
+                        "y": 5,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 3,
+                        "y": 6,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 4,
+                        "y": 0,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 4,
+                        "y": 1,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 4,
+                        "y": 2,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 4,
+                        "y": 3,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 4,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 4,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 4,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 5,
+                        "y": 0,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 5,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 5,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 5,
+                        "y": 3,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 5,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 5,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 1,
+                    "Properties": {
+                        "x": 5,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                }
+            ],
+            "XLenght": 6,
+            "YLenght": 7
+        },
+        {
+            "Grid": [
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 0,
+                        "y": 0,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 0,
+                        "y": 1,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 0,
+                        "y": 2,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 0,
+                        "y": 5,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 1,
+                    "Properties": {
+                        "x": 0,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 1,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 1,
+                        "y": 3,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 1,
+                        "y": 4,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 1,
+                        "y": 5,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 2,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 2,
+                        "y": 4,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 2,
+                        "y": 5,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
                     "Properties": {
                         "x": 3,
                         "y": 0,
@@ -119,10 +1171,1462 @@
                         "y": 1,
                         "RotationIndex": 0
                     }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 3,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 3,
+                        "y": 3,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 3,
+                        "y": 4,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 3,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 1,
+                    "Properties": {
+                        "x": 3,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 4,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 4,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 4,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 4,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 4,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 4,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 4,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 5,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 5,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 5,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 5,
+                        "y": 3,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 5,
+                        "y": 4,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 5,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 5,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 6,
+                        "y": 0,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 6,
+                        "y": 1,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 6,
+                        "y": 2,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 6,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 6,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 6,
+                        "y": 5,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 1,
+                    "Properties": {
+                        "x": 6,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
                 }
             ],
-            "XLenght": 4,
-            "YLenght": 2
+            "XLenght": 7,
+            "YLenght": 7
+        },
+        {
+            "Grid": [
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 0,
+                        "y": 0,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 1,
+                    "Properties": {
+                        "x": 0,
+                        "y": 7,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 1,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 1,
+                        "y": 7,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 2,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 2,
+                        "y": 1,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 2,
+                        "y": 7,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 0,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 3,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 3,
+                        "y": 7,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 4,
+                        "y": 0,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 4,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 4,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 4,
+                        "y": 3,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 4,
+                        "y": 4,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 4,
+                        "y": 5,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 4,
+                        "y": 6,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 4,
+                        "y": 7,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 5,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 5,
+                        "y": 1,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 5,
+                        "y": 2,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 5,
+                        "y": 3,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 5,
+                        "y": 4,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 5,
+                        "y": 5,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 5,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 5,
+                        "y": 7,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 6,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 6,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 6,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 6,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 6,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 6,
+                        "y": 5,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 6,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 6,
+                        "y": 7,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 7,
+                        "y": 0,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 7,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 7,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 7,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 7,
+                        "y": 4,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 7,
+                        "y": 5,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 7,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 7,
+                        "y": 7,
+                        "RotationIndex": 1
+                    }
+                }
+            ],
+            "XLenght": 8,
+            "YLenght": 8
+        },
+        {
+            "Grid": [
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 0,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 0,
+                        "y": 1,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 0,
+                        "y": 6,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 0,
+                        "y": 7,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 0,
+                        "y": 8,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 0,
+                        "y": 9,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 1,
+                        "y": 2,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 3,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 1,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 7,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 1,
+                        "y": 8,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 1,
+                        "y": 9,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 2,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 2,
+                        "y": 4,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 2,
+                        "y": 7,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 2,
+                        "y": 8,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 2,
+                        "y": 9,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 3,
+                        "y": 4,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 7,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 3,
+                        "y": 8,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 3,
+                        "y": 9,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 4,
+                        "y": 0,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 4,
+                        "y": 1,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 4,
+                        "y": 2,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 4,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 4,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 4,
+                        "y": 5,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 4,
+                        "y": 6,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 4,
+                        "y": 7,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 4,
+                        "y": 8,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 1,
+                    "Properties": {
+                        "x": 4,
+                        "y": 9,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 5,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 5,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 5,
+                        "y": 2,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 5,
+                        "y": 3,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 5,
+                        "y": 4,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 5,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 5,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 5,
+                        "y": 7,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 5,
+                        "y": 8,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 5,
+                        "y": 9,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 6,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 6,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 6,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 6,
+                        "y": 3,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 6,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 6,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 6,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 6,
+                        "y": 7,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 6,
+                        "y": 8,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 6,
+                        "y": 9,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 7,
+                        "y": 0,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 7,
+                        "y": 1,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 7,
+                        "y": 2,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 7,
+                        "y": 3,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 7,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 7,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 7,
+                        "y": 6,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 5,
+                    "Properties": {
+                        "x": 7,
+                        "y": 7,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 7,
+                        "y": 8,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 7,
+                        "y": 9,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 8,
+                        "y": 0,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 8,
+                        "y": 1,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 3,
+                    "Properties": {
+                        "x": 8,
+                        "y": 2,
+                        "RotationIndex": 1
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 8,
+                        "y": 3,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 8,
+                        "y": 4,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 8,
+                        "y": 5,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 8,
+                        "y": 6,
+                        "RotationIndex": 2
+                    }
+                },
+                {
+                    "Type": 4,
+                    "Properties": {
+                        "x": 8,
+                        "y": 7,
+                        "RotationIndex": 3
+                    }
+                },
+                {
+                    "Type": 0,
+                    "Properties": {
+                        "x": 8,
+                        "y": 8,
+                        "RotationIndex": 0
+                    }
+                },
+                {
+                    "Type": 2,
+                    "Properties": {
+                        "x": 8,
+                        "y": 9,
+                        "RotationIndex": 1
+                    }
+                }
+            ],
+            "XLenght": 9,
+            "YLenght": 10
         }
     ]
 }
