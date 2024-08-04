@@ -11,6 +11,7 @@ using EnergyLoop.Game.TileGrid;
 using EnergyLoop.Game.Tiles.Details;
 using TMPro;
 using UnityEngine;
+using ObjectPool;
 
 namespace EnergyLoop.Game.Gameplay.Manager
 {
@@ -22,6 +23,8 @@ namespace EnergyLoop.Game.Gameplay.Manager
         [SerializeField] UIManager uIManager;
         [SerializeField] CameraBehavior cameraBehavior;
         [SerializeField] SFXPlayer sFXPlayer;
+        [SerializeField] ObjectPooler objectPooler;
+
         LevelData levelData;
         LevelsProgression levelsProgression;
         private ITile[,] gridTiles;
@@ -33,6 +36,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
 
         private void Start()
         {
+            tileGrid.Initialize(objectPooler);
             LoadingUtilities();
             uIManager.SetLevelDetails(levelsProgression);
             uIManager.OnLevelButton += OnLevelButton;

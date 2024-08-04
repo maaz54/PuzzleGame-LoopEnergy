@@ -10,6 +10,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine.UI;
 using EnergyLoop.Game.LevelSerializer;
+using ObjectPool;
 
 
 namespace EnergyLoop.Game.LevelMaker
@@ -27,6 +28,10 @@ namespace EnergyLoop.Game.LevelMaker
         [SerializeField] LevelSaveLoadUtility levelSaveLoadUtility;
         [SerializeField] Button buttonLevelSave;
         [SerializeField] Button buttonResetGrid;
+
+        [SerializeField] ObjectPooler objectPooler;
+
+
         /// <summary>
         /// Tiles Grid
         /// use to handle tiles listners like when use select tiles
@@ -41,14 +46,19 @@ namespace EnergyLoop.Game.LevelMaker
         private void Awake()
         {
             this.iGrid = TilesGrid;
+            TilesGrid.Initialize(objectPooler);
+
             buttonLevelSave.onClick.AddListener(SaveLevel);
             buttonResetGrid.onClick.AddListener(Init);
         }
 
         private void SaveLevel()
         {
-            canSaveLevel = false;
-            levelSaveLoadUtility.SaveLevel(new Level(gridTiles, levelSaveLoadUtility.Data.Levels.Count + 1));
+            if (canSaveLevel)
+            {
+                canSaveLevel = false;
+                levelSaveLoadUtility.SaveLevel(new Level(gridTiles, levelSaveLoadUtility.Data.Levels.Count + 1));
+            }
         }
 
         private void OnEnable()
@@ -113,7 +123,7 @@ namespace EnergyLoop.Game.LevelMaker
                 data.Type = (TileType)tileType;
             }
 
-            clickedTile.SetTileDetails(data,false);
+            clickedTile.SetTileDetails(data, false);
         }
     }
 }

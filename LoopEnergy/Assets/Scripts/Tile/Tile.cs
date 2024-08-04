@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using EnergyLoop.Game.Tiles.Details;
 using System.Linq;
+using ObjectPool.Interface;
+using Unity.VisualScripting;
 
 namespace EnergyLoop.Game.Tiles
 {
@@ -44,6 +46,18 @@ namespace EnergyLoop.Game.Tiles
         public int CurrentRotationIndex => currentRotationIndex;
 
         public bool IsConnectedWithPower { get; set; }
+
+        [SerializeField] int objectID = 0;
+        public int ObjectID => objectID;
+
+        private void OnDisable()
+        {
+            node = null;
+            SetType(TileType.None);
+            IsConnectedWithPower = true;
+            currentRotationIndex = 0;
+            SetZRotation(currentRotationIndex);
+        }
 
         /// <summary>
         /// setting tile position
@@ -156,13 +170,6 @@ namespace EnergyLoop.Game.Tiles
         private void OnMouseUp()
         {
             transform.localScale = Vector3.one;
-        }
-        /// <summary>
-        /// destroying tile
-        /// </summary>
-        public void DestroyTile()
-        {
-            Destroy(gameObject);
         }
     }
 }

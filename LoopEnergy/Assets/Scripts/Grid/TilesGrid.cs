@@ -8,6 +8,7 @@ using System;
 using Unity.VisualScripting;
 using EnergyLoop.Game.Tiles.Details;
 using EnergyLoop.Game.LevelSerializer;
+using ObjectPool.Interface;
 
 namespace EnergyLoop.Game.TileGrid
 {
@@ -34,6 +35,13 @@ namespace EnergyLoop.Game.TileGrid
         /// </summary>
         private Vector3[,] tileGridPositions;
 
+        IObjectPooler objectPooler;
+
+        public void Initialize(IObjectPooler objectPooler)
+        {
+            this.objectPooler = objectPooler;
+        }
+
         /// <summary>
         /// Generating tiles
         /// </summary>
@@ -47,7 +55,7 @@ namespace EnergyLoop.Game.TileGrid
             {
                 for (int y = 0; y < yLength; y++)
                 {
-                    ITile tile = Instantiate(tilePrefabe, transform);
+                    ITile tile = objectPooler.Pool<Tile>(tilePrefabe,transform);
                     TileData data = new TileData(TileType.None, new(x, y, 0));
                     tile.SetTileDetails(data, true);
                     tile.SetPosition(position);
@@ -226,7 +234,7 @@ namespace EnergyLoop.Game.TileGrid
             {
                 foreach (var item in gridTiles)
                 {
-                    item.DestroyTile();
+                    objectPooler.Remove(item);
                 }
             }
         }

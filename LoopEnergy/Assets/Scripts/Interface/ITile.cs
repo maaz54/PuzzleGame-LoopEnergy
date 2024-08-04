@@ -5,17 +5,18 @@ using UnityEngine;
 using UnityEngine.Events;
 using EnergyLoop.Game.Tiles.Details;
 using EnergyLoop.Game.Tiles;
+using ObjectPool.Interface;
 
 namespace EnergyLoop.Game.Interface
 {
     public class TileClickedEvent : UnityEvent<ITile> { }
-    public interface ITile
+    public interface ITile : IPoolableObject
     {
         // handle the callback when use click on tile
         TileClickedEvent OnTileClicked { get; set; }
 
         // tile transfrom
-        Transform Transform { get; }
+        new Transform Transform { get; }
         // tile position
         Vector3 Position { get; }
 
@@ -31,8 +32,6 @@ namespace EnergyLoop.Game.Interface
         void SetTileDetails(TileData details, bool initializeNode);
         // setting tile position
         void SetPosition(Vector3 position);
-        // destroying tile
-        void DestroyTile();
 
         void SetMakeBGInvisible();
 
