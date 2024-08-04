@@ -93,7 +93,6 @@ namespace EnergyLoop.Game.LevelMaker
             if (isRotateTile)
             {
                 clickedTile.RotateTile();
-                data.Properties.RotationIndex = clickedTile.CurrentRotationIndex;
             }
             else
             {

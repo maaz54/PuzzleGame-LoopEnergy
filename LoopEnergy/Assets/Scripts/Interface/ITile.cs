@@ -43,7 +43,5 @@ namespace EnergyLoop.Game.Interface
         void SetType(TileType type);
 
         void RotateTile();
-
-        void SetZRotation(int index);
     }
 }

@@ -89,7 +89,7 @@ namespace EnergyLoop.Game.Tiles
             {
                 IsConnectedWithPower = true;
                 StartGlow();
-                node = new Node(1, 1, 1, 1);
+                node = new Node(0, 0, 1, 0);
             }
             else if (data.Type == TileType.Bulb)
             {

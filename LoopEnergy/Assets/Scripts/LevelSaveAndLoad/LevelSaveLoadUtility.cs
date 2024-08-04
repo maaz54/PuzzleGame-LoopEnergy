@@ -25,12 +25,6 @@ namespace EnergyLoop.Game.LevelSerializer
 
         }
 
-        [ContextMenu("LoadData")]
-        public void LoadData()
-        {
-            Data = LoadLevelData();
-        }
-
         public void SaveLevel(Level level)
         {
             Data.Levels.Add(level);
@@ -57,9 +51,5 @@ namespace EnergyLoop.Game.LevelSerializer
                 return null;
             }
         }
-
-
     }
-
-
 }

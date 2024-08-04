@@ -28,13 +28,11 @@ namespace EnergyLoop.Game.Tiles.Details
     public class TileTranformProperties
     {
         public int x, y;
-        public int RotationIndex;
 
-        public TileTranformProperties(int x, int y, int RotationIndex)
+        public TileTranformProperties(int x, int y)
         {
             this.x = x;
             this.y = y;
-            this.RotationIndex = RotationIndex;
         }
     }
 

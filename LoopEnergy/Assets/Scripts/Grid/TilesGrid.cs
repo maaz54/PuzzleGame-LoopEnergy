@@ -48,7 +48,7 @@ namespace EnergyLoop.Game.TileGrid
                 for (int y = 0; y < yLength; y++)
                 {
                     ITile tile = Instantiate(tilePrefabe, transform);
-                    TileData data = new TileData(TileType.None, new(x, y, 0));
+                    TileData data = new TileData(TileType.None, new(x, y));
                     tile.SetTileDetails(data);
                     tile.SetPosition(position);
                     gridTiles[x, y] = tile;

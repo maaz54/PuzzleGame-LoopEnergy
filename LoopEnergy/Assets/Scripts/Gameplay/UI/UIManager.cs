@@ -22,15 +22,15 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
         /// Texts
         [SerializeField] TextMeshProUGUI currentScoreText;
         [SerializeField] TextMeshProUGUI finalScoreText;
+        [SerializeField] TextMeshProUGUI levelNoText;
 
+        
         [SerializeField] LevelButton levelButtonPrefab;
-
         [SerializeField] GameObject levelButtonHolder;
 
         // Actions triggered by UI events
         public Action OnGameStartButton;
         public Action OnNextLevelButton;
-
         public Action<LevelProgressData> OnLevelButton;
 
         void Start()
@@ -50,8 +50,9 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
         }
 
         // Start the game and display the gameplay panel
-        public void PlayGame()
+        public void PlayGame(int levelNo)
         {
+            levelNoText.text = "Level: "+levelNo.ToString();
             EnablePanel(GameplayPanel);
         }
 
@@ -77,12 +78,6 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
         {
             finalScoreText.text = "Turns: " + turns.ToString();
             EnablePanel(LevelCompletePanel);
-        }
-
-        // Event handler for next level button click
-        private void OnNextLevel()
-        {
-            OnNextLevelButton?.Invoke();
         }
 
         private void OnSelectLevelButton()
