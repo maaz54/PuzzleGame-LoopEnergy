@@ -58,6 +58,7 @@ namespace EnergyLoop.Game.Tiles
             IsConnectedWithPower = true;
             currentRotationIndex = 0;
             SetZRotation(currentRotationIndex);
+            StopGlowing();
         }
 
         /// <summary>

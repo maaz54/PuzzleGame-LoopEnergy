@@ -41,6 +41,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
             uIManager.SetLevelDetails(levelsProgression);
             uIManager.OnLevelButton += OnLevelButton;
             uIManager.OnGameStartButton += OnPlayGame;
+            uIManager.TapToContinue += OnContinueButton;
 
             tileGrid.PlaySFX += PlaySFX;
         }
@@ -48,6 +49,11 @@ namespace EnergyLoop.Game.Gameplay.Manager
         private void PlaySFX(string name)
         {
             sFXPlayer.PlayAudioClip(name);
+        }
+
+        private void OnContinueButton()
+        {
+            tileGrid.EmptyGrid();
         }
 
         void LoadingUtilities()
@@ -162,6 +168,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
                 await tileGrid.GlowAllTilesEffect();
                 await Task.Delay(TimeSpan.FromSeconds(2));
                 uIManager.LevelComplete(noOfTurns);
+                uIManager.UpdateLevelDetails(levelsProgression);
             }
 
         }

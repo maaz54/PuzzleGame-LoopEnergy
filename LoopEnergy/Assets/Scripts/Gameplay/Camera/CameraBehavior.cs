@@ -9,18 +9,16 @@ namespace EnergyLoop.Game.Gameplay.Manager
     {
         [SerializeField] Camera Camera;
 
+        [SerializeField] float shakeDuration = 0.5f;
+        [SerializeField] float shakeMagnitude = 0.1f;
+        private Vector3 originalPos;
+
         public void AdjustCameraSize(int gridSizeX, int gridSizeY)
         {
-            Camera.orthographicSize = gridSizeX > gridSizeY ? gridSizeX + 2 : gridSizeY + 2;
+            Camera.orthographicSize = gridSizeX > gridSizeY ? gridSizeX * 1.25f : gridSizeY * 1.25f;
             originalPos = transform.localPosition;
         }
 
-        public float shakeDuration = 0.5f;
-        public float shakeMagnitude = 0.1f;
-
-        private Vector3 originalPos;
-
-        [ContextMenu("TriggerShake")]
         public void TriggerShake()
         {
             _ = Shake();

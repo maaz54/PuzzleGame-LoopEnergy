@@ -118,7 +118,6 @@ namespace EnergyLoop.Game.TileGrid
                     if (tile.Node.connections[0] == 1 &&
                     tile.Data.Properties.y < columns - 1)
                     {
-                        Debug.Log(tile.Transform.name);
 
                         if (gridTiles[tile.Data.Properties.x, tile.Data.Properties.y + 1].Node.connections[2] == 1)
                         {
@@ -139,7 +138,6 @@ namespace EnergyLoop.Game.TileGrid
                     if (tile.Node.connections[2] == 1 &&
                     tile.Data.Properties.y > 0)
                     {
-                        Debug.Log(tile.Transform.name);
 
                         if (gridTiles[tile.Data.Properties.x, tile.Data.Properties.y - 1].Node.connections[0] == 1)
                         {
@@ -263,6 +261,8 @@ namespace EnergyLoop.Game.TileGrid
                     objectPooler.Remove(item);
                 }
             }
+            gridTiles = null;
+            tileGridPositions = null;
         }
     }
 }

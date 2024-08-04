@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using EnergyLoop.Game.Gameplay.UI;
 using TMPro;
 using UnityEngine;
@@ -18,28 +19,39 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
         [SerializeField] Button gameStartButton;
         [SerializeField] Button tapToContinueButton;
         [SerializeField] Button selectLevelButton;
+        [SerializeField] Button backButtonLevelScreen;
 
         /// Texts
         [SerializeField] TextMeshProUGUI currentScoreText;
         [SerializeField] TextMeshProUGUI finalScoreText;
         [SerializeField] TextMeshProUGUI levelNoText;
 
-        
+
         [SerializeField] LevelButton levelButtonPrefab;
         [SerializeField] GameObject levelButtonHolder;
 
+        [SerializeField] List<LevelButton> levelButtons;
+
         // Actions triggered by UI events
         public Action OnGameStartButton;
-        public Action OnNextLevelButton;
+        public Action TapToContinue;
         public Action<LevelProgressData> OnLevelButton;
 
         void Start()
         {
             gameStartButton.onClick.AddListener(OnGameStart);
-            tapToContinueButton.onClick.AddListener(() => EnablePanel(menuPanel));
+            tapToContinueButton.onClick.AddListener(TapToContinueButton);
             selectLevelButton.onClick.AddListener(OnSelectLevelButton);
+            backButtonLevelScreen.onClick.AddListener(() => EnablePanel(menuPanel));
+
 
             EnablePanel(menuPanel);
+        }
+
+        private void TapToContinueButton()
+        {
+            EnablePanel(menuPanel);
+            TapToContinue?.Invoke();
         }
 
         // Event handler for game start button click
@@ -52,7 +64,7 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
         // Start the game and display the gameplay panel
         public void PlayGame(int levelNo)
         {
-            levelNoText.text = "Level: "+levelNo.ToString();
+            levelNoText.text = "Level: " + levelNo.ToString();
             EnablePanel(GameplayPanel);
         }
 
@@ -63,6 +75,15 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
                 LevelButton levelButton = Instantiate(levelButtonPrefab, levelButtonHolder.transform);
                 levelButton.Initialize(levelsProgression.LevelsProgressData[i]);
                 levelButton.OnButtonPressed += (level) => OnLevelButton?.Invoke(level);
+                levelButtons.Add(levelButton);
+            }
+        }
+
+        public void UpdateLevelDetails(LevelsProgression levelsProgression)
+        {
+            for (int i = 0; i < levelButtons.Count; i++)
+            {
+                levelButtons[i].Initialize(levelsProgression.LevelsProgressData[i]);
             }
         }
 
