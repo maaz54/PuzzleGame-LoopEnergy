@@ -15,7 +15,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
 
         public void AdjustCameraSize(int gridSizeX, int gridSizeY)
         {
-            Camera.orthographicSize = gridSizeX > gridSizeY ? gridSizeX * 1.25f : gridSizeY * 1.25f;
+            Camera.orthographicSize = gridSizeX > gridSizeY ? gridSizeX * 1.7f : gridSizeY * 1.7f;
             originalPos = transform.localPosition;
         }
 
