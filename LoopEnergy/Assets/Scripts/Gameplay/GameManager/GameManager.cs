@@ -58,7 +58,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
             if (!levelProgressData.IsLocked)
             {
                 currentLevel = levelProgressData.LevelNo;
-                uIManager.PlayGame();
+                uIManager.PlayGame(currentLevel);
                 GenerateLevel(levelProgressData.LevelNo);
             }
         }
@@ -67,7 +67,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
         {
             LevelProgressData levelProgressData = levelsProgression.LevelsProgressData.FindLast(level => !level.IsLocked);
             currentLevel = levelProgressData.LevelNo;
-            uIManager.PlayGame();
+            uIManager.PlayGame(currentLevel);
             GenerateLevel(currentLevel);
 
         }
@@ -114,6 +114,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
                 if (clickedTile.Data.Type == TileType.Power)
                 {
                     sFXPlayer.PlayAudioClip("foul");
+                    cameraBehavior.TriggerShake();
                 }
                 else
                 {
@@ -135,7 +136,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
                 int levelPrograssionIndex = levelsProgression.LevelsProgressData.FindIndex(level => level.LevelNo == currentLevel); ;
                 levelsProgression.LevelsProgressData[levelPrograssionIndex].NoOfTurn = noOfTurns;
                 levelsProgression.LevelsProgressData[levelPrograssionIndex].Completed = true;
-                if (currentLevel < levelsProgression.LevelsProgressData.Count - 1)
+                if (currentLevel < levelsProgression.LevelsProgressData.Count)
                 {
                     levelsProgression.LevelsProgressData[levelPrograssionIndex + 1].IsLocked = false;
                 }

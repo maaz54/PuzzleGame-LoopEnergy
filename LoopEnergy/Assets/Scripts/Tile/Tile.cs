@@ -71,12 +71,15 @@ namespace EnergyLoop.Game.Tiles
             IsConnectedWithPower = false;
         }
 
-        public void SetTileDetails(TileData data)
+        public void SetTileDetails(TileData data, bool initializeNode)
         {
             this.data = data;
             SetType(this.data.Type);
-            InitializeNode();
+
+            if (initializeNode)
+                InitializeNode();
         }
+
 
         private void InitializeNode()
         {
@@ -90,6 +93,12 @@ namespace EnergyLoop.Game.Tiles
                 IsConnectedWithPower = true;
                 StartGlow();
                 node = new Node(0, 0, 1, 0);
+
+                while (currentRotationIndex != data.Properties.RotationIndex)
+                {
+                    RotateTile();
+                }
+
             }
             else if (data.Type == TileType.Bulb)
             {
@@ -108,6 +117,7 @@ namespace EnergyLoop.Game.Tiles
                 node = new Node(1, 1, 0, 1);
             }
         }
+
 
         public void RotateTile()
         {

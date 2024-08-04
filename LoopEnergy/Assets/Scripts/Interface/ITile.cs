@@ -28,7 +28,7 @@ namespace EnergyLoop.Game.Interface
         bool IsConnectedWithPower { get; set; }
 
         //setting tile Details
-        void SetTileDetails(TileData details);
+        void SetTileDetails(TileData details, bool initializeNode);
         // setting tile position
         void SetPosition(Vector3 position);
         // destroying tile

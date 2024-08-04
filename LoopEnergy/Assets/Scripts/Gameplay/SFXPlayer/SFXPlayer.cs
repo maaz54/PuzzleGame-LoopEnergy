@@ -18,7 +18,6 @@ namespace EnergyLoop.Game.Gameplay.SFX
             }
         }
 
-
         bool FindAudioClip(string particleName, out AudioClip audioClip)
         {
             AudioClip[] audioClips = audiosRecord.First(p => p.Name.Contains(particleName)).AudioClips;

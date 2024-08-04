@@ -36,6 +36,8 @@ namespace EnergyLoop.Game.LevelMaker
 
         bool isRotateTile;
 
+        bool canSaveLevel = false;
+
         private void Awake()
         {
             this.iGrid = TilesGrid;
@@ -45,6 +47,7 @@ namespace EnergyLoop.Game.LevelMaker
 
         private void SaveLevel()
         {
+            canSaveLevel = false;
             levelSaveLoadUtility.SaveLevel(new Level(gridTiles, levelSaveLoadUtility.Data.Levels.Count + 1));
         }
 
@@ -67,6 +70,7 @@ namespace EnergyLoop.Game.LevelMaker
             iGrid.EmptyGrid();
             gridTiles = iGrid.GenerateTiles(gridSizeX, gridSizeY);
             TilesListner();
+            canSaveLevel = true;
         }
 
         /// <summary>
@@ -93,6 +97,7 @@ namespace EnergyLoop.Game.LevelMaker
             if (isRotateTile)
             {
                 clickedTile.RotateTile();
+                data.Properties.RotationIndex = clickedTile.CurrentRotationIndex;
             }
             else
             {
@@ -108,7 +113,7 @@ namespace EnergyLoop.Game.LevelMaker
                 data.Type = (TileType)tileType;
             }
 
-            clickedTile.SetTileDetails(data);
+            clickedTile.SetTileDetails(data,false);
         }
     }
 }

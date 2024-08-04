@@ -134,7 +134,7 @@ MonoBehaviour:
   tileView:
   - sprite: {fileID: 21300000, guid: 35eb6fa4da6ef4142b1d348b1cc6a53c, type: 3}
     Type: 2
-  - sprite: {fileID: 21300000, guid: 8c57f9517a3bc0a499a2b47b9cc74376, type: 3}
+  - sprite: {fileID: 21300000, guid: 9131cc9beaee1784d981e9999176d499, type: 3}
     Type: 1
   - sprite: {fileID: 21300000, guid: afc6ad38b4dd29443ad4f4e46c1d8bc8, type: 3}
     Type: 3
