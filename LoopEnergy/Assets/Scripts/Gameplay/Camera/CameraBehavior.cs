@@ -5,6 +5,10 @@ using UnityEngine;
 
 namespace EnergyLoop.Game.Gameplay.Manager
 {
+    /// <summary>
+    /// Contains logic for adjust camera size according to grid 
+    /// contains animations like shake effect
+    /// </summary>
     public class CameraBehavior : MonoBehaviour
     {
         [SerializeField] Camera Camera;
@@ -12,6 +16,7 @@ namespace EnergyLoop.Game.Gameplay.Manager
         [SerializeField] float shakeDuration = 0.5f;
         [SerializeField] float shakeMagnitude = 0.1f;
         private Vector3 originalPos;
+
 
         public void AdjustCameraSize(int gridSizeX, int gridSizeY)
         {
@@ -24,6 +29,9 @@ namespace EnergyLoop.Game.Gameplay.Manager
             _ = Shake();
         }
 
+        /// <summary>
+        /// Camera Shake Effect
+        /// </summary>
         private async Task Shake()
         {
             float elapsed = 0.0f;

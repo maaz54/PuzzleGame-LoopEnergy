@@ -4,9 +4,13 @@ using EnergyLoop.Game.Gameplay.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using EnergyLoop.Game.Gameplay.Utility;
 
 namespace EnergyLoop.Game.Gameplay.Manager.UI
 {
+    /// <summary>
+    /// Manages the UI elements and interactions in the game.
+    /// </summary>
     public class UIManager : MonoBehaviour
     {
         /// UI Panels
@@ -27,9 +31,13 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
         [SerializeField] TextMeshProUGUI levelNoText;
 
 
+        // Prefab for level buttons
         [SerializeField] LevelButton levelButtonPrefab;
+
+        // Holder for level buttons
         [SerializeField] GameObject levelButtonHolder;
 
+        // List of level buttons
         [SerializeField] List<LevelButton> levelButtons;
 
         // Actions triggered by UI events
@@ -48,26 +56,35 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
             EnablePanel(menuPanel);
         }
 
+        /// <summary>
+        /// Handles tap to continue button click.
+        /// </summary>
         private void TapToContinueButton()
         {
             EnablePanel(menuPanel);
             TapToContinue?.Invoke();
         }
 
-        // Event handler for game start button click
-
+        /// <summary>
+        /// Starts the game and displays the gameplay panel.
+        /// </summary>
         private void OnGameStart()
         {
             OnGameStartButton?.Invoke();
         }
 
-        // Start the game and display the gameplay panel
+        /// <summary>
+        /// Starts the game and displays the gameplay panel.
+        /// </summary>
         public void PlayGame(int levelNo)
         {
             levelNoText.text = "Level: " + levelNo.ToString();
             EnablePanel(GameplayPanel);
         }
 
+        /// <summary>
+        /// Sets the level details and initializes level buttons.
+        /// </summary>
         public void SetLevelDetails(LevelsProgression levelsProgression)
         {
             for (int i = 0; i < levelsProgression.LevelsProgressData.Count; i++)
@@ -79,6 +96,9 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
             }
         }
 
+        /// <summary>
+        /// Updates the level details for existing level buttons.
+        /// </summary>
         public void UpdateLevelDetails(LevelsProgression levelsProgression)
         {
             for (int i = 0; i < levelButtons.Count; i++)
@@ -88,25 +108,34 @@ namespace EnergyLoop.Game.Gameplay.Manager.UI
         }
 
 
-        // Set the current score text
+        /// <summary>
+        /// Sets the current score text.
+        /// </summary>
         public void SetScore(int turns)
         {
             currentScoreText.text = "Turns: " + turns.ToString();
         }
 
-        // Handle level completion event
+        /// <summary>
+        /// Handles level completion event and displays the level complete panel.
+        /// </summary>
         public void LevelComplete(int turns)
         {
             finalScoreText.text = "Turns: " + turns.ToString();
             EnablePanel(LevelCompletePanel);
         }
 
+        /// <summary>
+        /// Handles select level button click.
+        /// </summary>
         private void OnSelectLevelButton()
         {
             EnablePanel(LevelsPanel);
         }
 
-        // Enable the specified panel and disable others
+        /// <summary>
+        /// Enables the specified panel and disables others.
+        /// </summary>
         private void EnablePanel(GameObject panel)
         {
             menuPanel.SetActive(false);

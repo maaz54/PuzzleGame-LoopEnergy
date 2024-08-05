@@ -10,9 +10,13 @@ namespace EnergyLoop.Game.LevelSerializer
 {
     public class LevelSaveLoadUtility : MonoBehaviour
     {
+        // Name of the file to save/load data
         [SerializeField] string fileName;
+
+        // Path to the folder where the file is saved
         [SerializeField] string folderPath;
 
+        // hold level data
         public LevelData Data = new LevelData();
 
         private void Start()
@@ -25,11 +29,12 @@ namespace EnergyLoop.Game.LevelSerializer
 
         }
 
+        //  save a level to a JSON file
         public void SaveLevel(Level level)
         {
             Data.Levels.Add(level);
 
-            string json = JsonUtility.ToJson(Data,true);
+            string json = JsonUtility.ToJson(Data, true);
 
             string path = folderPath;
             File.WriteAllText(path, json);

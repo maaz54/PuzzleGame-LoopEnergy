@@ -2,33 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class LevelsProgression
+namespace EnergyLoop.Game.Gameplay.Utility
 {
-    public List<LevelProgressData> LevelsProgressData;
-
-    public LevelsProgression(int TotalLevels)
+    /// <summary>
+    /// Represents the progression data for all levels.
+    /// </summary>
+    [System.Serializable]
+    public class LevelsProgression
     {
-        LevelsProgressData = new();
-        for (int i = 0; i < TotalLevels; i++)
+        public List<LevelProgressData> LevelsProgressData;
+
+        public LevelsProgression(int TotalLevels)
         {
-            LevelsProgressData.Add(new LevelProgressData(i + 1));
+            LevelsProgressData = new();
+            for (int i = 0; i < TotalLevels; i++)
+            {
+                LevelsProgressData.Add(new LevelProgressData(i + 1));
+            }
         }
     }
-}
 
-[System.Serializable]
-public class LevelProgressData
-{
-    public int LevelNo;
-    public int NoOfTurn;
-    public bool IsLocked;
-    public bool Completed;
 
-    public LevelProgressData(int LevelNo)
+    /// <summary>
+    /// Represents the progression data for a single level.
+    /// </summary>
+    [System.Serializable]
+    public class LevelProgressData
     {
-        this.LevelNo = LevelNo;
-        NoOfTurn = 0;
-        IsLocked = LevelNo == 1 ? false : true;
+        public int LevelNo;
+        public int NoOfTurn;
+        public bool IsLocked;
+        public bool Completed;
+
+        public LevelProgressData(int LevelNo)
+        {
+            this.LevelNo = LevelNo;
+            NoOfTurn = 0;
+            IsLocked = LevelNo == 1 ? false : true;
+        }
     }
 }

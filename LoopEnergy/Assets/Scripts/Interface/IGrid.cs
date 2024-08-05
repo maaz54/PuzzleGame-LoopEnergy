@@ -23,6 +23,9 @@ namespace EnergyLoop.Game.Interface
         /// </summary>
         void EmptyGrid();
 
+        /// <summary>
+        /// Checks if all nodes in the grid are matched.
+        /// </summary>
         bool CheckAllNodesMatched();
 
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace EnergyLoop.Game.Tiles.Details
 {
+    // Represents visual and type details of a tile
     [System.Serializable]
     public class TileView
     {
@@ -11,6 +12,7 @@ namespace EnergyLoop.Game.Tiles.Details
         public TileType Type;
     }
 
+    //Contains data for each tile, including its type and transformation properties
     [System.Serializable]
     public class TileData
     {
@@ -24,6 +26,7 @@ namespace EnergyLoop.Game.Tiles.Details
         }
     }
 
+    // Holds the transformation properties of a tile, including position and rotation
     [System.Serializable]
     public class TileTranformProperties
     {
@@ -38,6 +41,7 @@ namespace EnergyLoop.Game.Tiles.Details
         }
     }
 
+    //representing different types of tiles
     public enum TileType
     {
         None,

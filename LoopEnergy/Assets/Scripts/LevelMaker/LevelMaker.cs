@@ -16,12 +16,12 @@ using ObjectPool;
 namespace EnergyLoop.Game.LevelMaker
 {
     /// <summary>
-    /// Handles the tiles and grid calling 
+    /// Handles the grid Level Making 
     /// </summary>
     public class LevelMaker : MonoBehaviour
     {
         [SerializeField] private TilesGrid TilesGrid;
-        //// 
+        // Grid size Y
         [SerializeField] private int gridSizeX;
         //Grid size y 
         [SerializeField] private int gridSizeY;
@@ -30,7 +30,6 @@ namespace EnergyLoop.Game.LevelMaker
         [SerializeField] Button buttonResetGrid;
 
         [SerializeField] ObjectPooler objectPooler;
-
 
         /// <summary>
         /// Tiles Grid

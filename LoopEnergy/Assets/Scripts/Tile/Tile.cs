@@ -5,8 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using EnergyLoop.Game.Tiles.Details;
 using System.Linq;
-using ObjectPool.Interface;
-using Unity.VisualScripting;
 
 namespace EnergyLoop.Game.Tiles
 {

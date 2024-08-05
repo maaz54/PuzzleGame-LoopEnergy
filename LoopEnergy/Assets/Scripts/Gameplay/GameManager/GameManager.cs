@@ -9,29 +9,54 @@ using EnergyLoop.Game.Interface;
 using EnergyLoop.Game.LevelSerializer;
 using EnergyLoop.Game.TileGrid;
 using EnergyLoop.Game.Tiles.Details;
-using TMPro;
+using EnergyLoop.Game.Gameplay.Utility;
 using UnityEngine;
 using ObjectPool;
 
 namespace EnergyLoop.Game.Gameplay.Manager
 {
+    /// <summary>
+    /// Manage the gameplay behavior
+    /// </summary>
     public class GameManager : MonoBehaviour
     {
+        // / Utility for saving/loading level progression
         [SerializeField] LevelPrograssionSaveLoadUtility levelPrograssionSaveLoadUtility;
+
+        // Utility for saving/loading levels
         [SerializeField] LevelSaveLoadUtility levelSaveLoadUtility;
+
+        // Grid of tiles for the game
         [SerializeField] TilesGrid tileGrid;
+
+        // Manages UI components
         [SerializeField] UIManager uIManager;
+
+        // Manages camera behavior
         [SerializeField] CameraBehavior cameraBehavior;
+
+        // Plays sound effects
         [SerializeField] SFXPlayer sFXPlayer;
+
+        // Manages object pooling
         [SerializeField] ObjectPooler objectPooler;
 
+        // Data for levels
         LevelData levelData;
+
+        // Progression data for levels
         LevelsProgression levelsProgression;
+
+        // 2D Array of tiles
         private ITile[,] tiles;
 
+        // Number of turns taken by the player in current level
         private int noOfTurns = 0;
+
+        // Current level number
         private int currentLevel = 0;
 
+        // Flag to check if the game is completed
         bool isGameCompleted = false;
 
         private void Start()
@@ -46,16 +71,26 @@ namespace EnergyLoop.Game.Gameplay.Manager
             tileGrid.PlaySFX += PlaySFX;
         }
 
+
+        /// <summary>
+        /// Plays the specified sound effect.
+        /// </summary>
         private void PlaySFX(string name)
         {
             sFXPlayer.PlayAudioClip(name);
         }
 
+        /// <summary>
+        /// Handles the continue button click event on level complete.
+        /// </summary>
         private void OnContinueButton()
         {
             tileGrid.EmptyGrid();
         }
 
+        /// <summary>
+        /// Loads necessary utilities for level and progression data.
+        /// </summary>
         void LoadingUtilities()
         {
             levelData = levelSaveLoadUtility.LoadLevelData();
@@ -70,6 +105,9 @@ namespace EnergyLoop.Game.Gameplay.Manager
             }
         }
 
+        /// <summary>
+        /// Handles the level button click event.
+        /// </summary>
         private void OnLevelButton(LevelProgressData levelProgressData)
         {
             if (!levelProgressData.IsLocked)
@@ -80,6 +118,9 @@ namespace EnergyLoop.Game.Gameplay.Manager
             }
         }
 
+        /// <summary>
+        /// Handles the game start button click event.
+        /// </summary>
         private void OnPlayGame()
         {
             LevelProgressData levelProgressData = levelsProgression.LevelsProgressData.FindLast(level => !level.IsLocked);
@@ -89,7 +130,9 @@ namespace EnergyLoop.Game.Gameplay.Manager
 
         }
 
-
+        /// <summary>
+        /// Generates the specified level.
+        /// </summary>
         private void GenerateLevel(int levelNo)
         {
             tileGrid.EmptyGrid();
@@ -149,6 +192,9 @@ namespace EnergyLoop.Game.Gameplay.Manager
             }
         }
 
+        /// <summary>
+        /// Checks if all tiles are matched then shows level complete.
+        /// </summary>
         private async Task CheckedIsAllTileMatched()
         {
             if (tileGrid.CheckAllNodesMatched())

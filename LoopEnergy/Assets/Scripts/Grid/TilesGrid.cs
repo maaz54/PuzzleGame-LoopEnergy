@@ -39,6 +39,10 @@ namespace EnergyLoop.Game.TileGrid
 
         public Action<string> PlaySFX;
 
+
+        /// <summary>
+        /// Initializes the grid with an object pooler.
+        /// </summary>
         public void Initialize(IObjectPooler objectPooler)
         {
             this.objectPooler = objectPooler;
@@ -72,6 +76,9 @@ namespace EnergyLoop.Game.TileGrid
             return gridTiles;
         }
 
+        /// <summary>
+        /// Sets the level details for the grid.
+        /// </summary>
         public void SetLevelDetails(Level level)
         {
             foreach (var tile in level.Grid)
@@ -80,6 +87,9 @@ namespace EnergyLoop.Game.TileGrid
             }
         }
 
+        /// <summary>
+        /// Randomizes the rotation of tiles in the grid.
+        /// </summary>
         public void RandomizeRotation()
         {
             foreach (var tile in gridTiles)
@@ -88,7 +98,12 @@ namespace EnergyLoop.Game.TileGrid
                 if (tile.Data.Type != TileType.None &&
                     tile.Data.Type != TileType.Power)
                 {
-                    int rotateTimes = UnityEngine.Random.Range(0, 4);
+                    int rotateTimes = 0;
+
+                    while (rotateTimes == tile.Data.Properties.RotationIndex)
+                    {
+                        rotateTimes = UnityEngine.Random.Range(0, 4);
+                    }
 
                     for (int i = 0; i < rotateTimes; i++)
                     {
@@ -100,6 +115,9 @@ namespace EnergyLoop.Game.TileGrid
             CheckAllNodesMatched();
         }
 
+        /// <summary>
+        /// Checks if all nodes in the grid are matched.
+        /// </summary>
         public bool CheckAllNodesMatched()
         {
             int rows = gridTiles.GetLength(0);
@@ -160,7 +178,6 @@ namespace EnergyLoop.Game.TileGrid
                     {
                         if (gridTiles[tile.Data.Properties.x + 1, tile.Data.Properties.y].Node.connections[3] == 1)
                         {
-                            // isAllNodesConnected = true;
                             SupplyPower(tile, gridTiles[tile.Data.Properties.x + 1, tile.Data.Properties.y]);
 
                         }
@@ -180,7 +197,6 @@ namespace EnergyLoop.Game.TileGrid
                     {
                         if (gridTiles[tile.Data.Properties.x - 1, tile.Data.Properties.y].Node.connections[1] == 1)
                         {
-                            // isAllNodesConnected = true;
                             SupplyPower(tile, gridTiles[tile.Data.Properties.x - 1, tile.Data.Properties.y]);
 
                         }
@@ -200,19 +216,24 @@ namespace EnergyLoop.Game.TileGrid
             return isAllNodesConnected;
         }
 
+        /// <summary>
+        /// Creates a glowing effect for all tiles in the grid.
+        /// </summary>
         public async Task GlowAllTilesEffect()
         {
+            int totalTiles = gridTiles.GetLength(0) * gridTiles.GetLength(1);
+
             foreach (var tile in gridTiles)
             {
                 if (tile.Data.Type != TileType.None)
                 {
                     tile.StopGlowing();
                     PlaySFX?.Invoke("tick");
-                    await Task.Delay(TimeSpan.FromSeconds(.1));
+                    await Task.Delay(TimeSpan.FromSeconds(.05f));
                 }
             }
 
-            await Task.Delay(TimeSpan.FromSeconds(.25));
+            await Task.Delay(TimeSpan.FromSeconds(.5));
 
             foreach (var tile in gridTiles)
             {
@@ -220,11 +241,14 @@ namespace EnergyLoop.Game.TileGrid
                 {
                     tile.StartGlow();
                     PlaySFX?.Invoke("tick");
-                    await Task.Delay(TimeSpan.FromSeconds(.1));
+                    await Task.Delay(TimeSpan.FromSeconds(.05f));
                 }
             }
         }
 
+        /// <summary>
+        /// Supplies power between two connected tiles.
+        /// </summary>
         void SupplyPower(ITile currentTile, ITile OtherTile)
         {
             if (OtherTile.IsConnectedWithPower)
@@ -242,6 +266,10 @@ namespace EnergyLoop.Game.TileGrid
             }
         }
 
+
+        /// <summary>
+        /// Breaks the power connection of the current tile.
+        /// </summary>
         void PowerBreak(ITile currentTile)
         {
             currentTile.StopGlowing();
